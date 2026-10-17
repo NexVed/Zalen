@@ -32,7 +32,7 @@ export const cities = [
 ];
 
 export const events = [
-  { id: "build", day: "24", month: "OCT", title: "Build your first big thing", kind: "Founders & builders meetup", location: "Bengaluru · Online", time: "Sat, Oct 24 · 4:00 PM IST", description: "An informal demo meetup for early builders. Bring an idea, share what you are working on, and meet potential collaborators.", tone: "pink" as const },
+  { id: "build", day: "24", month: "OCT", title: "Founders & builders meetup", kind: "Founders & builders meetup", location: "Bengaluru · Online", time: "Sat, Oct 24 · 4:00 PM IST", description: "An informal demo meetup for early builders. Bring an idea, share what you are working on, and meet potential collaborators.", tone: "pink" as const },
   { id: "portfolio", day: "28", month: "OCT", title: "The portfolio review room", kind: "Live mentor session", location: "Online", time: "Wed, Oct 28 · 6:00 PM IST", description: "A guided portfolio review session focused on telling the story behind your work. Prepare one project and a question for the group.", tone: "orange" as const },
 ];
 
@@ -44,8 +44,7 @@ export type DemoState = {
   portfolio: PortfolioItem[];
 };
 export const initialDemo: DemoState = {
-  saved: ["layer", "forma"], joined: [], customOpportunities: [],
-  applications: [{ opportunityId: "bloom", status: "In review", note: "I enjoy building thoughtful, sustainable brands.", link: "" }, { opportunityId: "nova", status: "Shortlisted", note: "I would love to turn this dataset into useful insights.", link: "" }],
-  profile: { name: "Alex Morgan", headline: "Product designer & curious builder", skills: "UI/UX Design, Figma, React, Prototyping", link: "" },
-  portfolio: [{ id: "flow", title: "Flow — a calmer way to manage money", type: "Product design", link: "" }, { id: "habitat", title: "Habitat — thoughtful spaces, online", type: "Frontend development", link: "" }],
+  saved: [], joined: [], customOpportunities: [], applications: [],
+  profile: { name: "", headline: "", skills: "", link: "" },
+  portfolio: [],
 };

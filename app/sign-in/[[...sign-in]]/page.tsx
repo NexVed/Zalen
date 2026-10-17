@@ -1,12 +1,10 @@
 import { Suspense } from "react";
-import { SignIn } from "@clerk/nextjs";
+import { AuthScreen } from "@/components/AuthScreen";
 
 export default function SignInPage() {
   return (
-    <div className="flex flex-1 items-center justify-center p-8">
-      <Suspense fallback={null}>
-        <SignIn />
-      </Suspense>
-    </div>
+    <Suspense fallback={<main id="main" aria-busy="true">Opening your space…</main>}>
+      <AuthScreen mode="sign-in" />
+    </Suspense>
   );
 }

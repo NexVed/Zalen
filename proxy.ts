@@ -1,5 +1,6 @@
 import { clerkMiddleware } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
+import { clerkConfigured } from "@/lib/auth-config";
 
 /**
  * Clerk middleware runs before the route tree, so the session is resolved once
@@ -18,7 +19,7 @@ const authenticatedProxy = clerkMiddleware(async (auth) => {
   await auth();
 });
 
-export default process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY && process.env.CLERK_SECRET_KEY
+export default clerkConfigured && process.env.CLERK_SECRET_KEY
   ? authenticatedProxy
   : () => NextResponse.next();
 

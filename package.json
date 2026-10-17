@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "node scripts/prepare-map-assets.mjs",
+    "predev:web": "node scripts/prepare-map-assets.mjs",
+    "predev:all": "node scripts/prepare-map-assets.mjs",
+    "prebuild": "node scripts/prepare-map-assets.mjs",
     "dev": "next dev --webpack",
     "dev:web": "next dev --webpack",
     "dev:api": "cd server && go run ./cmd/api",

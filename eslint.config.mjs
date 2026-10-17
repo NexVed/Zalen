@@ -22,6 +22,8 @@ const eslintConfig = defineConfig([
     ".agents/**",
     ".claude/**",
     ".playwright-mcp/**",
+    // Vendor worker copied unchanged by scripts/prepare-map-assets.mjs.
+    "public/maps/maplibre-worker.mjs",
   ]),
 ]);
 

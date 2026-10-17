@@ -1,12 +1,10 @@
 import { Suspense } from "react";
-import { SignUp } from "@clerk/nextjs";
+import { AuthScreen } from "@/components/AuthScreen";
 
 export default function SignUpPage() {
   return (
-    <div className="flex flex-1 items-center justify-center p-8">
-      <Suspense fallback={null}>
-        <SignUp />
-      </Suspense>
-    </div>
+    <Suspense fallback={<main id="main" aria-busy="true">Getting your space ready…</main>}>
+      <AuthScreen mode="sign-up" />
+    </Suspense>
   );
 }

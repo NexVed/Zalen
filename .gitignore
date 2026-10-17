@@ -12,10 +12,14 @@
 
 # testing
 /coverage
+/.playwright-mcp/
 
 # next.js
 /.next/
 /out/
+# Copied from the installed MapLibre package by predev/prebuild.
+/public/maps/maplibre-worker.mjs
+/public/maps/maplibre-LICENSE.txt
 
 # production
 /build

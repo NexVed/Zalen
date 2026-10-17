@@ -1,0 +1,73 @@
+.page { display: flex; flex-direction: column; gap: 24px; min-width: 0; }
+.hero { padding: 24px; border-bottom: 1px solid var(--border); }
+.eyebrow { display: flex; align-items: center; gap: 8px; color: var(--accent-primary); font-size: 10px; letter-spacing: 1.5px; margin-bottom: 16px; text-transform: uppercase; }
+.hero h2 { max-width: 650px; font-family: var(--font-display); font-size: clamp(24px, 2.5vw, 32px); line-height: 1.1; font-weight: 500; letter-spacing: -1.5px; }
+.hero p { max-width: 540px; margin-top: 16px; color: var(--text-secondary); font-size: 13px; line-height: 1.8; }
+.heroIcon { color: var(--accent-secondary); padding: 24px; border: 1px solid var(--border); border-radius: 50%; background: var(--surface-pink); transform: rotate(-12deg); flex-shrink: 0; }
+.hero button { margin-top: 24px; }
+.toolbar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; }
+.tabs { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.tab { display: inline-flex; align-items: center; gap: 6px; color: var(--text-muted); background: transparent; padding: 10px 14px; border: 1px solid var(--border); border-radius: 24px; font-size: 12px; min-height: 40px; }
+.tab:hover, .active { background: var(--surface-pink); color: var(--accent-primary); border-color: var(--accent-primary); }
+.search { display: flex; align-items: center; gap: 8px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; color: var(--text-muted); padding: 0 12px; max-width: 100%; }
+.search input { width: 230px; max-width: 100%; min-width: 0; color: var(--text-primary); border: 0; background: transparent; font-size: 12px; padding-block: 12px; }
+.availability { display: flex; gap: 8px; align-items: center; font-size: 12px; color: var(--text-secondary); }
+.meta { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; color: var(--text-muted); font-size: 11px; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.card { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; padding: 24px; border: 1px solid var(--border-subtle); border-radius: 16px; background: var(--bg-card); min-width: 0; }
+.card:hover { border-color: var(--border); }
+.cardTop { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 12px; }
+.avatar { display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; border: 1px solid var(--border); border-radius: 14px; background: var(--surface-pink); color: var(--accent-primary); font-family: var(--font-display); font-size: 21px; }
+.status { display: inline-flex; align-items: center; gap: 5px; color: var(--success); background: var(--success-surface); padding: 6px 8px; border-radius: 6px; font-size: 10px; }
+.mutedStatus { color: var(--text-muted); background: var(--bg-elevated); }
+.name { font-family: var(--font-display); font-weight: 500; font-size: 19px; letter-spacing: -0.5px; line-height: 1.4; }
+.location { display: flex; align-items: center; gap: 5px; color: var(--text-muted); font-size: 11px; margin-top: 6px; }
+.description { color: var(--text-secondary); font-size: 12px; line-height: 1.9; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { display: inline-flex; align-items: center; gap: 5px; color: var(--text-secondary); background: var(--bg-elevated); border-radius: 6px; padding: 5px 8px; font-size: 10px; }
+.cardFooter { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; width: 100%; border-top: 1px solid var(--border-subtle); margin-top: auto; padding-top: 16px; color: var(--text-secondary); font-size: 11px; }
+.cardButton { display: inline-flex; align-items: center; gap: 5px; background: transparent; color: var(--accent-primary); font-size: 12px; min-height: 36px; }
+.rows { display: flex; flex-direction: column; gap: 14px; }
+.investor { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 24px; padding: 28px; border: 1px solid var(--border-subtle); border-radius: 16px; background: var(--bg-card); }
+.investorBody { display: flex; flex-direction: column; gap: 12px; }
+.investorAction { display: flex; flex-direction: column; justify-content: center; gap: 12px; align-items: flex-end; color: var(--text-muted); font-size: 11px; }
+.note { display: flex; align-items: flex-start; gap: 10px; border: 1px solid var(--border); border-radius: 12px; padding: 18px; color: var(--text-muted); font-size: 12px; line-height: 1.8; }
+.forumLayout { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 24px; align-items: start; }
+.thread { width: 100%; display: flex; gap: 18px; text-align: left; border: 1px solid var(--border-subtle); border-radius: 14px; padding: 24px; color: var(--text-primary); background: var(--bg-card); }
+.thread:hover { border-color: var(--accent-primary); }
+.threadBody { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 12px; }
+.thread h3 { font-family: var(--font-display); font-size: 18px; font-weight: 500; line-height: 1.5; }
+.thread p { color: var(--text-muted); font-size: 12px; line-height: 1.8; }
+.threadMeta { display: flex; align-items: center; flex-wrap: wrap; gap: 14px; color: var(--text-muted); font-size: 11px; }
+.guidelines { padding: 24px; border-radius: 14px; border: 1px solid var(--border); background: var(--bg-card); }
+.guidelines h3 { font-family: var(--font-display); font-size: 18px; font-weight: 500; margin-bottom: 20px; }
+.guidelines p { color: var(--text-secondary); font-size: 12px; line-height: 1.8; margin-top: 14px; }
+.detail { display: flex; flex-direction: column; gap: 20px; }
+.bodyText { white-space: pre-wrap; overflow-wrap: anywhere; color: var(--text-secondary); font-size: 13px; line-height: 1.9; }
+.reply { border-top: 1px solid var(--border); padding-top: 20px; }
+.reply strong { display: block; margin-bottom: 10px; font-size: 12px; }
+.replyForm { display: flex; flex-direction: column; gap: 12px; }
+.overlay { position: fixed; inset: 0; z-index: 50; background: var(--overlay); backdrop-filter: blur(7px); }
+.dialog { position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 51; width: calc(100% - 32px); max-width: 600px; max-height: 90dvh; overflow-y: auto; border: 1px solid var(--border); border-radius: 20px; background: var(--bg-card); padding: 28px; box-shadow: var(--shadow); }
+.dialogHeading { display: flex; gap: 20px; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+.dialogTitle { font-family: var(--font-display); font-size: 26px; letter-spacing: -0.5px; font-weight: 500; }
+.dialogDescription { font-size: 12px; color: var(--text-muted); line-height: 1.8; margin-bottom: 24px; }
+.form { display: flex; flex-direction: column; gap: 18px; }
+.twoColumns { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.empty { display: flex; flex-direction: column; gap: 16px; padding: 48px 24px; text-align: center; align-items: center; color: var(--text-muted); border: 1px dashed var(--border); border-radius: 16px; }
+@media (max-width: 1100px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .forumLayout { grid-template-columns: 1fr; } .guidelines { display: none; } }
+@media (max-width: 700px) { .grid { grid-template-columns: 1fr; } .heroIcon { display: none; } .investor { grid-template-columns: auto minmax(0, 1fr); gap: 16px; padding: 20px; } .investorAction { grid-column: 1 / -1; align-items: flex-start; } .toolbar, .search { width: 100%; } .search input { width: 100%; } .thread { padding: 18px; gap: 12px; } .dialog { padding: 22px; } .twoColumns { grid-template-columns: 1fr; } }
+
+@media (max-width: 700px) {
+  .hero { padding: 16px 0; }
+  .tab, .cardButton { min-height: 44px; }
+  .search { min-height: 44px; min-width: 0; }
+  .search input { font-size: 16px; }
+  .card { padding: 20px; }
+  .description, .thread p, .bodyText { font-size: 14px; }
+  .thread > .avatar { display: none; }
+  .investorBody, .cardTop > div, .detail { min-width: 0; }
+  .name, .thread h3, .location, .note { overflow-wrap: anywhere; }
+  .dialog { width: calc(100% - 24px); max-height: calc(100dvh - 24px); padding: 20px; }
+  .note { flex-wrap: wrap; }
+}

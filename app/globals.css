@@ -50,9 +50,13 @@ svg { flex-shrink: 0; }
 .maplibregl-ctrl-attrib { background: var(--bg-card) !important; color: var(--text-muted) !important; font-size: 9px !important; }
 .maplibregl-ctrl-attrib a { color: var(--text-muted) !important; }
 .maplibregl-canvas:focus-visible { outline-offset: -3px; }
+.zalen-opportunity-map, .zalen-opportunity-map.maplibregl-map { position: absolute; inset: 0; }
 .city-map-label { background: var(--bg-card); color: var(--text-secondary); padding: 3px 6px; border: 1px solid var(--border-subtle); border-radius: 4px; font-family: var(--font-inter), sans-serif; font-size: 9px; cursor: pointer; }
 .city-map-label:hover { color: var(--accent-primary); }
+.city-map-label[aria-pressed="true"] { color: var(--accent-primary); border-color: var(--accent-primary); background: var(--surface-pink); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
 }
 @stylex;
+
+:root { --nav-active-bg: #ff4d7d; --nav-active-text: #29121c; }
