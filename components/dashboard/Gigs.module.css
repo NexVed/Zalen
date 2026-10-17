@@ -1,0 +1,342 @@
+/* Gigs.module.css — gig-board specific styles */
+
+/* ---- Layout ---- */
+.gigsLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  gap: 24px;
+  align-items: start;
+}
+
+.sidebar {
+  padding: 24px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  position: sticky;
+  top: 96px;
+}
+
+.sidebar h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.sidebar p {
+  color: var(--text-secondary);
+  font-size: 12px;
+  line-height: 1.8;
+  margin-top: 14px;
+}
+
+.empty {
+  color: var(--text-muted);
+  font-size: 13px;
+  padding: 40px 0;
+  text-align: center;
+}
+
+/* ---- Gig card ---- */
+.gigCard {
+  display: flex;
+  gap: 18px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 22px;
+  background: var(--bg-card);
+  transition: border-color 0.15s ease;
+}
+
+.gigCard:hover {
+  border-color: var(--accent-primary);
+}
+
+.gigCardClosed {
+  opacity: 0.72;
+}
+
+/* ---- Category icon column ---- */
+.iconCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.categoryIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface-pink);
+  color: var(--accent-primary);
+}
+
+/* ---- Card body ---- */
+.cardBody {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.cardTopRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ---- Badges ---- */
+.categoryBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  border-radius: 6px;
+  padding: 5px 9px;
+  font-size: 11px;
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 6px;
+  padding: 5px 9px;
+  font-size: 11px;
+}
+
+.statusOpen {
+  background: color-mix(in srgb, var(--accent-primary) 12%, transparent);
+  color: var(--accent-primary);
+}
+
+.statusHired {
+  background: #e8f7ef;
+  color: #1a7a4b;
+}
+
+.statusCompleted {
+  background: #e8f7ef;
+  color: #1a7a4b;
+}
+
+.statusCancelled {
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+}
+
+@media (prefers-color-scheme: dark) {
+  .statusHired,
+  .statusCompleted {
+    background: color-mix(in srgb, #27c984 12%, transparent);
+    color: #27c984;
+  }
+}
+
+.budgetBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: color-mix(in srgb, gold 15%, transparent);
+  color: #946c00;
+  border-radius: 6px;
+  padding: 5px 9px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+@media (prefers-color-scheme: dark) {
+  .budgetBadge {
+    color: #ffc940;
+    background: color-mix(in srgb, gold 12%, transparent);
+  }
+}
+
+.appliedBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: color-mix(in srgb, var(--accent-primary) 10%, transparent);
+  color: var(--accent-primary);
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.durationBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+  border-radius: 6px;
+  padding: 5px 9px;
+  font-size: 11px;
+}
+
+/* ---- Card content ---- */
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--text-primary);
+}
+
+.cardDesc {
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.cardMeta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+.proposalCount {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.refLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--accent-primary);
+  font-size: 11px;
+  text-decoration: none;
+}
+
+.refLink:hover {
+  text-decoration: underline;
+}
+
+/* ---- Form styles ---- */
+.formError {
+  color: var(--error, #e53e3e);
+  font-size: 12px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--error, #e53e3e) 10%, transparent);
+}
+
+.twoCol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* ---- Proposal list in detail dialog ---- */
+.proposalList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.proposalCard {
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 16px;
+  background: var(--bg-elevated);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.proposalCard.accepted {
+  border-color: #27c984;
+  background: color-mix(in srgb, #27c984 6%, var(--bg-card));
+}
+
+.proposalCard.rejected {
+  opacity: 0.6;
+}
+
+.proposalHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.proposalAuthor {
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--text-primary);
+  flex: 1;
+}
+
+.proposalRate {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent-primary);
+}
+
+.proposalBody {
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.portfolioLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--accent-primary);
+  text-decoration: none;
+}
+
+.portfolioLink:hover {
+  text-decoration: underline;
+}
+
+.proposalActions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1100px) {
+  .gigsLayout {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .gigCard {
+    padding: 16px;
+    gap: 12px;
+  }
+  .twoCol {
+    grid-template-columns: 1fr;
+  }
+  .iconCol {
+    display: none;
+  }
+}

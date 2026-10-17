@@ -17,6 +17,8 @@ import { Workspace } from "./Workspace";
 import { Sidebar } from "./Sidebar";
 import { BusinessFinder } from "./BusinessFinder";
 import { HubPage } from "./HubPage";
+import { BountiesPage } from "./BountiesPage";
+import { GigsPage } from "./GigsPage";
 
 import { DashboardDialog, type Modal } from "./DashboardDialog";
 import { ui } from "./ui";
@@ -50,15 +52,17 @@ function DashboardContent({ userId, name, authLoading = false, initialView }: { 
   function openModal(next: Modal) { if (!userId && next && ["post", "apply"].includes(next.kind)) { router.push("/sign-up"); return; } setModal(next); }
   function save(id: string) { if (!userId) { router.push("/sign-up"); return; } const saved = state.saved.includes(id); update(s => ({ ...s, saved: saved ? s.saved.filter(v => v !== id) : [...s.saved, id] })); setMessage(saved ? "Removed from your saved opportunities." : "Opportunity saved."); }
   function done(text: string) { setModal(null); setMessage(text); }
-  const market = ["Overview", "Bounties", "Gigs", "Opportunities"].includes(view);
-  const visibleItems = view === "Bounties" ? items.filter(item => item.category === "Challenge") : view === "Gigs" ? items.filter(item => item.category === "Paid project") : items;
+  const market = ["Overview", "Opportunities"].includes(view);
+  const visibleItems = items;
   return <>
     <Header view={view} onNavigate={navigate} search={search} onSearch={setSearch} onNotifications={() => openModal({ kind: "notifications" })} onProfile={() => router.push(userId ? "/profile" : "/sign-in")} name={state.profile.name} signedIn={Boolean(userId)} authLoading={authLoading} />
     <div {...stylex.props(s.shell)}>
       <main id="main" {...stylex.props(s.main)}>
-        <div {...stylex.props(s.pageHeading)}><div><div {...stylex.props(s.breadcrumb)}><span>Zalen</span><span>/</span><span {...stylex.props(s.breadcrumbActive)}>{view}</span><span {...stylex.props(s.demo)}>YOUR WORKSPACE</span></div><h1 {...stylex.props(s.title)}>{view === "Overview" ? <>{state.profile.name ? `Welcome, ${state.profile.name.split(" ")[0]}.` : "Welcome to Zalen."} </> : view}</h1><p {...stylex.props(s.subtitle)}>{pageFor(view).description}</p></div><div {...stylex.props(s.headingActions)}><span {...stylex.props(s.date)}><CalendarDays size={13} />{today}</span>{market && <button {...stylex.props(ui.secondary, s.createButton)} onClick={() => openModal({ kind: "post" })}><Plus size={15} />{view === "Bounties" ? "Post a bounty" : view === "Gigs" ? "Post a gig" : "Post an opportunity"}</button>}</div></div>
+        <div {...stylex.props(s.pageHeading)}><div><div {...stylex.props(s.breadcrumb)}><span>Zalen</span><span>/</span><span {...stylex.props(s.breadcrumbActive)}>{view}</span><span {...stylex.props(s.demo)}>YOUR WORKSPACE</span></div><h1 {...stylex.props(s.title)}>{view === "Overview" ? <>{state.profile.name ? `Welcome, ${state.profile.name.split(" ")[0]}.` : "Welcome to Zalen."} </> : view}</h1><p {...stylex.props(s.subtitle)}>{pageFor(view).description}</p></div><div {...stylex.props(s.headingActions)}><span {...stylex.props(s.date)}><CalendarDays size={13} />{today}</span>{market && <button {...stylex.props(ui.secondary, s.createButton)} onClick={() => openModal({ kind: "post" })}><Plus size={15} />Post an opportunity</button>}</div></div>
         {view === "Overview" && <Overview state={state} total={items.length} onExplore={() => navigate("Bounties")} onProfile={() => router.push(userId ? "/profile" : "/sign-in")} onWorkspace={() => navigate("My workspace")} />}
-        {market && <div {...stylex.props(s.stack)}><Opportunities key={view} items={visibleItems} state={state} onSave={save} onApply={item => openModal({ kind: "apply", item })} search={search} onSearch={setSearch} city={city} onCity={setCity} expanded={view !== "Overview"} heading={view === "Bounties" ? "Startup bounties & challenges" : view === "Gigs" ? "Freelance gigs & paid projects" : "Explore opportunities"} />{view === "Overview" && <Community joined={state.joined} onEvent={id => openModal({ kind: "event", id })} onViewAll={() => navigate("Events")} />}</div>}
+        {market && <div {...stylex.props(s.stack)}><Opportunities key={view} items={visibleItems} state={state} onSave={save} onApply={item => openModal({ kind: "apply", item })} search={search} onSearch={setSearch} city={city} onCity={setCity} expanded={view !== "Overview"} heading="Explore opportunities" />{view === "Overview" && <Community joined={state.joined} onEvent={id => openModal({ kind: "event", id })} onViewAll={() => navigate("Events")} />}</div>}
+        {view === "Bounties" && <BountiesPage userId={userId} search={search} onSearch={setSearch} />}
+        {view === "Gigs" && <GigsPage userId={userId} search={search} onSearch={setSearch} />}
         {view === "My workspace" && <Workspace state={state} items={items} onApplication={item => openModal({ kind: "apply", item })} onAddProject={() => router.push(userId ? "/profile?edit=portfolio" : "/sign-in")} onExplore={() => navigate("Bounties")} />}
         {(view === "Community" || view === "Events") && <Community joined={state.joined} onEvent={id => openModal({ kind: "event", id })} onViewAll={() => openModal({ kind: "about" })} search={search} onSearch={setSearch} city={city} onCity={setCity} expanded />}
         {view === "Freelancers" && <BusinessFinder userId={userId} search={search} onSearch={setSearch} />}
@@ -66,9 +70,9 @@ function DashboardContent({ userId, name, authLoading = false, initialView }: { 
         {view === "Profile" && <Profile />}
         <footer {...stylex.props(s.footer)}><span {...stylex.props(ui.row)}><span {...stylex.props(s.footerBrand)}>zalen</span><span {...stylex.props(s.footerDivider)} />Projects · Talent · Community</span><div {...stylex.props(ui.row, s.footerRight)}><span>{view === "Freelancers" ? "OpenStreetMap business data · Pitches saved on this device." : view === "Profile" ? "Manage your account profile and portfolio." : "Sample listings · Opportunity activity stays on this device."}</span><button {...stylex.props(ui.textButton)} onClick={() => openModal({ kind: "about" })}><CircleHelp size={13} />About this workspace</button></div>        </footer>
       </main>
-      {!isHubView(view) && view !== "My workspace" && view !== "Profile" && <Sidebar view={view} items={visibleItems} city={city} onCity={selectCity} state={state} />}
+      {!isHubView(view) && view !== "My workspace" && view !== "Profile" && view !== "Bounties" && view !== "Gigs" && <Sidebar view={view} items={visibleItems} city={city} onCity={selectCity} state={state} />}
     </div>
-    <DashboardDialog modal={modal} onClose={() => setModal(null)} state={state} update={update} onDone={done} signedIn={!!userId} onSignIn={() => router.push("/sign-in")} postingType={view === "Gigs" ? "Paid project" : view === "Bounties" ? "Challenge" : undefined} onWorkspace={() => { setModal(null); navigate("My workspace"); }} />
+    <DashboardDialog modal={modal} onClose={() => setModal(null)} state={state} update={update} onDone={done} signedIn={!!userId} onSignIn={() => router.push("/sign-in")} postingType={undefined} onWorkspace={() => { setModal(null); navigate("My workspace"); }} />
     <div role="status" aria-live="polite" {...stylex.props(s.toastRegion)}>{message && <div {...stylex.props(s.toast)}><span {...stylex.props(s.toastCheck)}><Check size={14} /></span>{message}<button aria-label="Dismiss notification" {...stylex.props(s.toastClose)} onClick={() => setMessage("")}><X size={15} /></button></div>}</div>
   </>;
 }

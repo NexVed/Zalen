@@ -8,6 +8,9 @@
  * @module
  */
 
+import type * as bounties from "../bounties.js";
+import type * as forum from "../forum.js";
+import type * as gigs from "../gigs.js";
 import type * as profile from "../profile.js";
 import type * as storage from "../storage.js";
 import type * as tasks from "../tasks.js";
@@ -20,6 +23,9 @@ import type {
 } from "convex/server";
 
 declare const fullApi: ApiFromModules<{
+  bounties: typeof bounties;
+  forum: typeof forum;
+  gigs: typeof gigs;
   profile: typeof profile;
   storage: typeof storage;
   tasks: typeof tasks;

@@ -1,0 +1,367 @@
+/* Bounties.module.css — bounty-board specific styles */
+
+/* ---- Layout ---- */
+.bountiesLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  gap: 24px;
+  align-items: start;
+}
+
+.sidebar {
+  padding: 24px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  position: sticky;
+  top: 96px;
+}
+
+.sidebar h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.sidebar p {
+  color: var(--text-secondary);
+  font-size: 12px;
+  line-height: 1.8;
+  margin-top: 14px;
+}
+
+.empty {
+  color: var(--text-muted);
+  font-size: 13px;
+  padding: 40px 0;
+  text-align: center;
+}
+
+/* ---- Bounty card ---- */
+.bountyCard {
+  display: flex;
+  gap: 18px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 22px;
+  background: var(--bg-card);
+  transition: border-color 0.15s ease;
+}
+
+.bountyCard:hover {
+  border-color: var(--accent-primary);
+}
+
+.cardCompleted {
+  opacity: 0.75;
+}
+
+/* ---- Vote column ---- */
+.voteCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.voteBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-muted);
+  transition: background 0.12s, color 0.12s, border-color 0.12s;
+  cursor: pointer;
+}
+
+.voteBtn:hover:not(:disabled) {
+  background: var(--surface-pink);
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+.voteBtn.voted {
+  background: var(--surface-pink);
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+.voteBtn:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.voteCount {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  min-width: 24px;
+  text-align: center;
+}
+
+/* ---- Card body ---- */
+.cardBody {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.cardTopRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ---- Badges ---- */
+.typeBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  border-radius: 6px;
+  padding: 5px 9px;
+  font-size: 11px;
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 6px;
+  padding: 5px 9px;
+  font-size: 11px;
+}
+
+.statusOpen {
+  background: color-mix(in srgb, var(--accent-primary) 12%, transparent);
+  color: var(--accent-primary);
+}
+
+.statusInProgress {
+  background: #fff9e6;
+  color: #c47a00;
+}
+
+.statusCompleted {
+  background: #e8f7ef;
+  color: #1a7a4b;
+}
+
+.statusCancelled {
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+}
+
+@media (prefers-color-scheme: dark) {
+  .statusInProgress {
+    background: color-mix(in srgb, #f5a623 12%, transparent);
+    color: #f5a623;
+  }
+  .statusCompleted {
+    background: color-mix(in srgb, #27c984 12%, transparent);
+    color: #27c984;
+  }
+}
+
+.rewardBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: color-mix(in srgb, gold 15%, transparent);
+  color: #946c00;
+  border-radius: 6px;
+  padding: 5px 9px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+@media (prefers-color-scheme: dark) {
+  .rewardBadge {
+    color: #ffc940;
+    background: color-mix(in srgb, gold 12%, transparent);
+  }
+}
+
+.appliedBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: color-mix(in srgb, var(--accent-primary) 10%, transparent);
+  color: var(--accent-primary);
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* ---- Card content ---- */
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--text-primary);
+}
+
+.cardDesc {
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.cardMeta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+.appCount {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.repoLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--accent-primary);
+  font-size: 11px;
+  text-decoration: none;
+}
+
+.repoLink:hover {
+  text-decoration: underline;
+}
+
+/* ---- BountyPostDialog / BountyDetailDialog shared form styles ---- */
+.postForm {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.twoCol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.formError {
+  color: var(--error, #e53e3e);
+  font-size: 12px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--error, #e53e3e) 10%, transparent);
+}
+
+/* ---- Application list in detail dialog ---- */
+.appList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.appCard {
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 16px;
+  background: var(--bg-elevated);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.appCard.accepted {
+  border-color: #27c984;
+  background: color-mix(in srgb, #27c984 6%, var(--bg-card));
+}
+
+.appCard.rejected {
+  opacity: 0.6;
+}
+
+.appCardHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.appAuthor {
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--text-primary);
+  flex: 1;
+}
+
+.appProposal {
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.appSolution {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 10px;
+}
+
+.appSolutionLabel {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.appSolutionBody {
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.appActions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1100px) {
+  .bountiesLayout {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .bountyCard {
+    padding: 16px;
+    gap: 12px;
+  }
+  .twoCol {
+    grid-template-columns: 1fr;
+  }
+}

@@ -135,4 +135,198 @@ export default defineSchema({
     /** "public" | "private" */
     visibility: v.optional(v.string()),
   }).index("by_user_id", ["userId"]),
+
+  // ---------------------------------------------------------------------------
+  // Forum tables (Reddit-style: posts, votes, comments)
+  // ---------------------------------------------------------------------------
+
+  /**
+   * A public forum post. Any authenticated user can create one.
+   * Score is kept denormalised on the document for fast listing sorts.
+   */
+  forumPosts: defineTable({
+    authorId: v.id("users"),
+    authorName: v.string(),
+    /** "Questions" | "Feedback" | "Build logs" | "Resources" */
+    category: v.string(),
+    title: v.string(),
+    body: v.string(),
+    /** Denormalised: upvotes minus downvotes, updated by vote mutations */
+    score: v.number(),
+    /** Denormalised comment count, updated by comment mutations */
+    commentCount: v.number(),
+    /** Up to 4 Convex storage IDs for attached images */
+    imageStorageIds: v.optional(v.array(v.id("_storage"))),
+    /** Optional external link attached to the post */
+    linkUrl: v.optional(v.string()),
+    /** Display title for the link (falls back to the URL if absent) */
+    linkTitle: v.optional(v.string()),
+    /** Unix ms timestamp of last edit, absent if never edited */
+    editedAt: v.optional(v.number()),
+  })
+    .index("by_category", ["category"])
+    .index("by_score", ["score"]),
+
+  /**
+   * One vote per (user, post) pair.
+   * direction: 1 = upvote, -1 = downvote.
+   */
+  forumVotes: defineTable({
+    postId: v.id("forumPosts"),
+    userId: v.id("users"),
+    /** 1 (up) or -1 (down) */
+    direction: v.number(),
+  })
+    .index("by_post", ["postId"])
+    .index("by_user_post", ["userId", "postId"]),
+
+  /**
+   * Comments on a forum post. Flat (no threading) for simplicity.
+   */
+  forumComments: defineTable({
+    postId: v.id("forumPosts"),
+    authorId: v.id("users"),
+    authorName: v.string(),
+    body: v.string(),
+    /** Unix ms timestamp of last edit, absent if never edited */
+    editedAt: v.optional(v.number()),
+  }).index("by_post", ["postId"]),
+
+  // ---------------------------------------------------------------------------
+  // Bounties tables (GitHub-Issues-style crowdsourced bounty board)
+  // ---------------------------------------------------------------------------
+
+  /**
+   * A bounty posted by any authenticated user.
+   *
+   * Types: "bug" | "feature" | "code_review" | "design" | "docs" | "other"
+   * Status: "open" | "in_progress" | "completed" | "cancelled"
+   */
+  bounties: defineTable({
+    authorId: v.id("users"),
+    authorName: v.string(),
+    title: v.string(),
+    description: v.string(),
+    /**
+     * "bug" | "feature" | "code_review" | "design" | "docs" | "research" | "other"
+     */
+    type: v.string(),
+    /** "open" | "in_progress" | "completed" | "cancelled" */
+    status: v.string(),
+    /** Reward string (freeform: "$50", "500 USDC", "open source credit", …) */
+    reward: v.optional(v.string()),
+    /** Optional repo URL, issue link, or reference URL */
+    repoUrl: v.optional(v.string()),
+    /** Skill tags e.g. ["TypeScript","React","Convex"] */
+    tags: v.optional(v.array(v.string())),
+    /** Denormalised application count for fast display */
+    applicationCount: v.number(),
+    /** Denormalised upvote score for sorting */
+    score: v.number(),
+    /** Unix ms timestamp of last edit */
+    editedAt: v.optional(v.number()),
+    /** Id of the accepted application (set when status → completed) */
+    acceptedApplicationId: v.optional(v.id("bountyApplications")),
+  })
+    .index("by_author", ["authorId"])
+    .index("by_status", ["status"])
+    .index("by_score", ["score"]),
+
+  /**
+   * An application / solution submission for a bounty.
+   * Users apply describing how they'll solve it; they can later submit a solution.
+   *
+   * Status: "pending" | "accepted" | "rejected"
+   */
+  bountyApplications: defineTable({
+    bountyId: v.id("bounties"),
+    applicantId: v.id("users"),
+    applicantName: v.string(),
+    /** Short description of approach or why the applicant is a good fit */
+    proposal: v.string(),
+    /** Optional solution text / links once work is done */
+    solution: v.optional(v.string()),
+    /** "pending" | "accepted" | "rejected" */
+    status: v.string(),
+    /** Unix ms timestamp of last edit */
+    editedAt: v.optional(v.number()),
+  })
+    .index("by_bounty", ["bountyId"])
+    .index("by_applicant", ["applicantId"])
+    .index("by_bounty_applicant", ["bountyId", "applicantId"]),
+
+  /**
+   * One upvote per (user, bounty) pair.
+   * Only upvotes (no downvotes) to keep the UX simple.
+   */
+  bountyVotes: defineTable({
+    bountyId: v.id("bounties"),
+    userId: v.id("users"),
+  })
+    .index("by_bounty", ["bountyId"])
+    .index("by_user_bounty", ["userId", "bountyId"]),
+
+  // ---------------------------------------------------------------------------
+  // Gigs tables (freelance / paid-project board)
+  // ---------------------------------------------------------------------------
+
+  /**
+   * A gig posted by a client looking to hire a freelancer.
+   *
+   * category: "development" | "design" | "writing" | "marketing" | "video" |
+   *           "data" | "consulting" | "other"
+   * status:   "open" | "hired" | "completed" | "cancelled"
+   * budgetType: "fixed" | "hourly"
+   */
+  gigs: defineTable({
+    authorId: v.id("users"),
+    authorName: v.string(),
+    title: v.string(),
+    description: v.string(),
+    /** "development" | "design" | "writing" | "marketing" | "video" | "data" | "consulting" | "other" */
+    category: v.string(),
+    /** "open" | "hired" | "completed" | "cancelled" */
+    status: v.string(),
+    /** "fixed" | "hourly" */
+    budgetType: v.optional(v.string()),
+    /** Human-readable budget string e.g. "$500", "₹10,000", "$25/hr" */
+    budget: v.optional(v.string()),
+    /** Duration string e.g. "1 week", "1 month", "ongoing" */
+    duration: v.optional(v.string()),
+    /** Required skills / tags */
+    skills: v.optional(v.array(v.string())),
+    /** Optional repo/reference URL */
+    referenceUrl: v.optional(v.string()),
+    /** Denormalised proposal count */
+    proposalCount: v.number(),
+    /** Unix ms of last edit */
+    editedAt: v.optional(v.number()),
+    /** Id of the accepted proposal when status → hired */
+    acceptedProposalId: v.optional(v.id("gigApplications")),
+  })
+    .index("by_author", ["authorId"])
+    .index("by_status", ["status"])
+    .index("by_category", ["category"]),
+
+  /**
+   * A freelancer's proposal on a gig.
+   * status: "pending" | "accepted" | "rejected"
+   */
+  gigApplications: defineTable({
+    gigId: v.id("gigs"),
+    applicantId: v.id("users"),
+    applicantName: v.string(),
+    /** Cover note / pitch */
+    coverLetter: v.string(),
+    /** Optional rate / quote from the freelancer */
+    proposedRate: v.optional(v.string()),
+    /** Link to portfolio, LinkedIn, GitHub, etc. */
+    portfolioUrl: v.optional(v.string()),
+    /** "pending" | "accepted" | "rejected" */
+    status: v.string(),
+    editedAt: v.optional(v.number()),
+  })
+    .index("by_gig", ["gigId"])
+    .index("by_applicant", ["applicantId"])
+    .index("by_gig_applicant", ["gigId", "applicantId"]),
 });
