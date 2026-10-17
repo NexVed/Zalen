@@ -8,6 +8,7 @@ export const navigation = [
   { name: "Gigs", path: "/gigs", description: "Browse paid freelance projects by budget and skill." },
   { name: "Events", path: "/events", description: "Browse meetups, workshops, and upcoming events." },
   { name: "My workspace", path: "/workspace", description: "Manage applications and portfolio projects." },
+  { name: "Profile", path: "/profile", description: "Your profile, skills, and portfolio." },
 ] as const;
 
 export type HubView = "Freelancers" | "Forum" | "Investors" | "B2B";

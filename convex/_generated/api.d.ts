@@ -8,6 +8,8 @@
  * @module
  */
 
+import type * as profile from "../profile.js";
+import type * as storage from "../storage.js";
 import type * as tasks from "../tasks.js";
 import type * as users from "../users.js";
 
@@ -18,6 +20,8 @@ import type {
 } from "convex/server";
 
 declare const fullApi: ApiFromModules<{
+  profile: typeof profile;
+  storage: typeof storage;
   tasks: typeof tasks;
   users: typeof users;
 }>;

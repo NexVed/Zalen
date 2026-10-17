@@ -20,6 +20,7 @@ import { HubPage } from "./HubPage";
 
 import { DashboardDialog, type Modal } from "./DashboardDialog";
 import { ui } from "./ui";
+import { Profile } from "./Profile";
 
 const subscribeDate = () => () => {};
 const readDate = () => new Date().toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "Asia/Kolkata" });
@@ -62,6 +63,7 @@ function DashboardContent({ userId, name, authLoading = false, initialView }: { 
         {(view === "Community" || view === "Events") && <Community joined={state.joined} onEvent={id => openModal({ kind: "event", id })} onViewAll={() => openModal({ kind: "about" })} search={search} onSearch={setSearch} city={city} onCity={setCity} expanded />}
         {view === "Freelancers" && <BusinessFinder userId={userId} search={search} onSearch={setSearch} />}
         {isHubView(view) && view !== "Freelancers" && <HubPage key={view} view={view} userId={userId} name={state.profile.name} search={search} onSearch={setSearch} />}
+        {view === "Profile" && <Profile userId={userId} />}
         <footer {...stylex.props(s.footer)}><span {...stylex.props(ui.row)}><span {...stylex.props(s.footerBrand)}>zalen</span><span {...stylex.props(s.footerDivider)} />Projects · Talent · Community</span><div {...stylex.props(ui.row, s.footerRight)}><span>{view === "Freelancers" ? "OpenStreetMap business data · Pitches saved on this device." : "Sample listings · Your activity stays on this device."}</span><button {...stylex.props(ui.textButton)} onClick={() => openModal({ kind: "about" })}><CircleHelp size={13} />About this workspace</button></div>        </footer>
       </main>
       {!isHubView(view) && view !== "My workspace" && <Sidebar view={view} items={visibleItems} city={city} onCity={selectCity} state={state} />}
