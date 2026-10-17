@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Zalen - Talent-to-Opportunity Platform",
+    "subtitle": "Proposed architecture: candidates and organizations meet over real, verifiable work.",
+    "output": ".archify/architecture-zalen-20261017-191741/zalen.html",
+    "quality_profile": "showcase"
+  },
+  "components": [
+    { "id": "candidates", "type": "external", "label": "Candidates", "sublabel": "Students . graduates . skilled talent", "pos": [40, 200], "size": [150, 64] },
+    { "id": "businesses", "type": "external", "label": "Organizations", "sublabel": "Startups . local businesses", "pos": [40, 320], "size": [150, 64] },
+
+    { "id": "clerk", "type": "security", "label": "Clerk", "sublabel": "Identity . sessions . JWT", "pos": [270, 60], "size": [180, 62], "tag": "auth" },
+
+    { "id": "webapp", "type": "frontend", "label": "Next.js Web App", "sublabel": "App Router . SSR + client", "pos": [270, 200], "size": [180, 70] },
+    { "id": "stylex", "type": "frontend", "label": "StyleX", "sublabel": "Design tokens . atomic CSS", "pos": [270, 300], "size": [180, 52] },
+
+    { "id": "fiber", "type": "backend", "label": "Go Fiber REST", "sublabel": "Integrations . heavy jobs", "pos": [270, 440], "size": [180, 62] },
+    { "id": "integrations", "type": "external", "label": "External APIs", "sublabel": "Email . storage . 3rd-party", "pos": [270, 560], "size": [180, 56] },
+
+    { "id": "convexapi", "type": "backend", "label": "Convex API", "sublabel": "Queries . mutations . actions", "pos": [560, 190], "size": [190, 70] },
+    { "id": "convexdb", "type": "database", "label": "Convex DB", "sublabel": "Documents . file storage", "pos": [560, 300], "size": [190, 66] },
+    { "id": "matching", "type": "backend", "label": "Matching Engine", "sublabel": "Explainable scoring . action", "pos": [845, 190], "size": [190, 70] },
+
+    { "id": "e_candidate", "type": "database", "label": "CandidateProfile", "sublabel": "Skills . portfolio", "pos": [560, 520], "size": [138, 46] },
+    { "id": "e_org", "type": "database", "label": "Organization", "sublabel": "Verified . hiring", "pos": [712, 520], "size": [138, 46] },
+    { "id": "e_opp", "type": "database", "label": "Opportunity", "sublabel": "Scoped brief", "pos": [864, 520], "size": [138, 46] },
+    { "id": "e_app", "type": "database", "label": "Application", "sublabel": "Status track", "pos": [1016, 520], "size": [138, 46] },
+
+    { "id": "e_challenge", "type": "database", "label": "Challenge", "sublabel": "Practical task", "pos": [560, 590], "size": [138, 46] },
+    { "id": "e_submission", "type": "database", "label": "Submission", "sublabel": "Deliverable", "pos": [712, 590], "size": [138, 46] },
+    { "id": "e_feedback", "type": "database", "label": "Feedback", "sublabel": "Review notes", "pos": [864, 590], "size": [138, 46] },
+    { "id": "e_portfolio", "type": "database", "label": "PortfolioItem", "sublabel": "Verifiable work", "pos": [1016, 590], "size": [138, 46] }
+  ],
+  "boundaries": [
+    { "kind": "region", "label": "Web client - Next.js + StyleX", "wraps": ["webapp", "stylex"] },
+    { "kind": "region", "label": "Convex - primary backend & data layer", "wraps": ["convexapi", "convexdb", "matching"] },
+    { "kind": "region", "label": "Optional services - Go Fiber", "wraps": ["fiber"] },
+    { "kind": "region", "label": "Core data model - Convex schema", "wraps": ["e_candidate", "e_org", "e_opp", "e_app", "e_challenge", "e_submission", "e_feedback", "e_portfolio"] }
+  ],
+  "connections": [
+    { "id": "cand-browse", "from": "candidates", "to": "webapp", "label": "browse & apply", "variant": "emphasis", "fromSide": "right", "toSide": "left" },
+    { "id": "org-publish", "from": "businesses", "to": "webapp", "label": "publish & review", "fromSide": "right", "toSide": "left" },
+
+    { "id": "webapp-signin", "from": "webapp", "to": "clerk", "label": "sign in", "fromSide": "top", "toSide": "bottom" },
+    { "id": "clerk-verify", "from": "clerk", "to": "convexapi", "label": "verify JWT", "variant": "security", "fromSide": "right", "toSide": "top" },
+
+    { "id": "webapp-convex", "from": "webapp", "to": "convexapi", "label": "queries & mutations", "variant": "emphasis", "fromSide": "right", "toSide": "left" },
+    { "id": "api-db", "from": "convexapi", "to": "convexdb", "label": "persist", "fromSide": "bottom", "toSide": "top" },
+    { "id": "api-match", "from": "convexapi", "to": "matching", "label": "score request", "fromSide": "right", "toSide": "left" },
+    { "id": "match-db", "from": "matching", "to": "convexdb", "label": "read / write scores", "fromSide": "bottom", "toSide": "right" },
+    { "id": "db-schema", "from": "convexdb", "to": "e_candidate", "label": "schema", "fromSide": "bottom", "toSide": "top" },
+
+    { "id": "webapp-fiber", "from": "webapp", "to": "fiber", "label": "delegated jobs", "variant": "dashed", "fromSide": "right", "toSide": "right" },
+    { "id": "fiber-ext", "from": "fiber", "to": "integrations", "label": "REST calls", "variant": "dashed", "fromSide": "bottom", "toSide": "top" }
+  ],
+  "cards": [
+    { "dot": "cyan", "title": "Frontend", "items": ["Next.js App Router with SSR + client components", "StyleX design tokens and atomic CSS", "One web client serves candidates and organizations"] },
+    { "dot": "emerald", "title": "Backend (Convex)", "items": ["Convex API exposes queries, mutations and actions", "Reactive document DB with file storage", "Explainable matching runs as a Convex action"] },
+    { "dot": "violet", "title": "Auth (Clerk)", "items": ["Clerk owns identity, sessions and JWT issuance", "Convex verifies the Clerk-issued JWT", "Candidates and organizations share one auth layer"] },
+    { "dot": "amber", "title": "Optional (Go Fiber)", "items": ["Dedicated REST service for integrations and heavy jobs", "Optional tier - core flows do not depend on it", "Talks to external email, storage and 3rd-party APIs"] },
+    { "dot": "rose", "title": "Core data model", "items": ["Applications track status end to end", "Submissions and feedback build verified work", "PortfolioItem is the candidate's proof of skill"] }
+  ]
+}

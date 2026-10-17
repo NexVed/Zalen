@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "d2b12d9e-7bfd-404b-b406-7490cb7a193b",
+  "status": "current",
+  "command": "deliver",
+  "type": "architecture",
+  "input": "C:\\Users\\Aryan Kaul\\AppData\\Local\\Temp\\opencode\\.archify\\architecture-zalen-20261017-191741\\candidate.json",
+  "output": "C:\\Users\\Aryan Kaul\\AppData\\Local\\Temp\\opencode\\.archify\\architecture-zalen-20261017-191741\\zalen.html",
+  "specification": {
+    "sha256": "4c7c5e7474a792b026744243c6c62ff8b813a39b004011a5f72b0b4c7faed426",
+    "bytes": 6146
+  },
+  "artifact": {
+    "sha256": "6da945e1d9b5ffcc9b1711490cc94d14074009346d342742b203cbb9c20926ac",
+    "bytes": 841115
+  }
+}
