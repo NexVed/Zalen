@@ -23,6 +23,7 @@ export function OpportunityMap({ items, city, onCity }: { items: Opportunity[]; 
     async function initialize() {
       try {
         const maplibre = await import("maplibre-gl");
+        maplibre.setWorkerUrl(new URL("maplibre-gl/dist/maplibre-gl-worker.mjs", import.meta.url).href);
         if (disposed || !container.current) return;
         const css = getComputedStyle(document.documentElement);
         const token = (name: string) => css.getPropertyValue(name).trim();

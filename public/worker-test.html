@@ -1,0 +1,14 @@
+<!doctype html>
+<html><head><title>PENDING</title></head><body>
+<script>
+const url = new URLSearchParams(location.search).get("u");
+try {
+  const w = new Worker(url, { type: "module" });
+  w.onerror = e => { document.title = "FAIL: " + (e.message || e.type) + " @" + (e.filename || "?"); };
+  w.onmessageerror = () => { document.title = "FAIL: messageerror"; };
+  setTimeout(() => { document.title = "OK: worker alive"; }, 2500);
+} catch (e) {
+  document.title = "THROW: " + e.message;
+}
+</script>
+</body></html>
