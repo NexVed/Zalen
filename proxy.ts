@@ -1,4 +1,5 @@
 import { clerkMiddleware } from "@clerk/nextjs/server";
+import { NextResponse } from "next/server";
 
 /**
  * Clerk middleware runs before the route tree, so the session is resolved once
@@ -11,11 +12,15 @@ import { clerkMiddleware } from "@clerk/nextjs/server";
  * itself; public routes such as `/` keep rendering immediately without
  * waiting on auth.
  */
-export default clerkMiddleware(async (auth) => {
+const authenticatedProxy = clerkMiddleware(async (auth) => {
   // Resolve authentication first, before any route renders, so protected
   // resources never have to block the render on session state.
   await auth();
 });
+
+export default process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY && process.env.CLERK_SECRET_KEY
+  ? authenticatedProxy
+  : () => NextResponse.next();
 
 export const config = {
   matcher: [

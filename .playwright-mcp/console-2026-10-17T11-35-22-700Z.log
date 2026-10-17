@@ -1,0 +1,19 @@
+[   17973ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:703
+[   44237ms] [ERROR] ./app/layout.tsx:2:1
+Syntax error: "next/font" requires SWC although Babel is being used due to a custom babel config being present.
+Read more: https://nextjs.org/docs/messages/babel-font-loader-conflict @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[  115931ms] [ERROR] ./node_modules/maplibre-gl/dist/maplibre-gl.mjs
+Error: Failed to recognize value `Spacing_Mark` for property `General_Category`.
+    at Array.forEach (<anonymous>)
+Import trace for requested module:
+./node_modules/maplibre-gl/dist/maplibre-gl.mjs
+./components/dashboard/OpportunityMap.tsx
+./components/dashboard/Dashboard.tsx @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[  128296ms] [ERROR] ./node_modules/maplibre-gl/dist/maplibre-gl.mjs
+Error: Failed to recognize value `Spacing_Mark` for property `General_Category`.
+    at Array.forEach (<anonymous>)
+Import trace for requested module:
+./node_modules/maplibre-gl/dist/maplibre-gl.mjs
+./components/dashboard/OpportunityMap.tsx
+./components/dashboard/Dashboard.tsx @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[  128410ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:703

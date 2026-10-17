@@ -35,8 +35,8 @@ const styles = stylex.create({
     color: colors.foreground,
   },
   danger: {
-    backgroundColor: "#dc2626",
-    color: "#ffffff",
+    backgroundColor: colors.primary,
+    color: colors.primaryForeground,
   },
 });
 

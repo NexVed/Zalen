@@ -19,6 +19,9 @@ const eslintConfig = defineConfig([
     "convex/_generated/**",
     // Go service.
     "server/**",
+    ".agents/**",
+    ".claude/**",
+    ".playwright-mcp/**",
   ]),
 ]);
 

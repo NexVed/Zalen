@@ -1,0 +1,2674 @@
+[     904ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:3000/:0
+[    1058ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:3000/_next/static/chunks/node_modules_react-dom_cjs_react-dom-client_development_1nq9a-7w2rk6e.js:16702
+[    1163ms] Error: ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output:
+
+
+    at Object.getCompilationErrors (file://C:\Users\u9780\Zalen\node_modules\next\dist\server\dev\hot-reloader-turbopack.js:1518:37)
+    at DevBundlerService.getCompilationError (file://C:\Users\u9780\Zalen\node_modules\next\dist\server\lib\dev-bundler-service.js:63:55)
+    at DevServer.getCompilationError (file://C:\Users\u9780\Zalen\node_modules\next\dist\server\dev\next-dev-server.js:692:42)
+    at DevServer.findPageComponents (file://C:\Users\u9780\Zalen\node_modules\next\dist\server\dev\next-dev-server.js:662:43)
+    at async DevServer.renderErrorToResponseImpl (file://C:\Users\u9780\Zalen\node_modules\next\dist\server\base-server.js:2026:26)
+[    1143ms] [LOG] [HMR] connected @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:703
+[    1526ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   14729ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   14855ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   14917ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   14940ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:703
+[   15011ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   15072ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   15133ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   15195ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   15259ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   15322ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   15383ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   15445ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   15507ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   15569ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   15633ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   15694ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   15757ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   15804ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   15851ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   15898ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   15945ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   16007ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   16055ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   16117ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   16179ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   16227ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   16289ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   16351ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   16398ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   16461ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   16522ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   16569ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   16632ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   16693ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   16755ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   16818ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   16880ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   16927ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   16989ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   17037ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   17099ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   17163ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   17225ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   17288ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   17335ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   17398ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   17461ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   17523ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   17570ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   17634ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   17680ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   17742ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   17804ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   17867ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   17930ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   17993ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   18040ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   18087ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   18150ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   18214ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   18276ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   18338ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   18401ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   18448ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   18510ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   18572ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   18634ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   18696ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   18742ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   18790ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   18851ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   18897ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   18960ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   19023ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   19086ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   19147ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   19208ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   19256ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   19318ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   19380ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   19444ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   19490ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   19553ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   19615ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   19678ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   19740ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   19802ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   19849ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   19910ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   19972ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   20049ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   20111ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   20174ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   20235ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   20284ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   20331ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   20378ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   20439ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   20502ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   20566ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   20628ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   20693ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   20754ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   20815ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   20877ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   20941ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   21004ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   21066ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   21129ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   21191ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   21237ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   21301ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   21365ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   21428ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   21490ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   21552ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   21613ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   21676ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   21739ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   21785ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   21833ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   21880ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   21927ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   21988ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   22052ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   22128ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   22189ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   22252ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   22313ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   22375ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   22437ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   22499ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   22545ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   22608ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   22670ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   22717ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   22764ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   22841ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   22903ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   22966ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   23028ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   23091ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   23137ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   23185ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   23248ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   23310ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   23372ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   23435ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   23484ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   23546ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   23594ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   23657ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   23703ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   23766ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   23827ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   23890ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   23952ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   24014ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   24079ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   24140ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   24218ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   24266ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   24312ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   24375ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   24436ms] [ERROR] ./proxy.ts
+Error: Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: creating new process
+
+Caused by:
+- node process exited before we could connect to it with exit code: 0
+
+Debug info:
+- Execution of <WebpackLoadersProcessedAsset as Asset>::content failed
+- Execution of WebpackLoadersProcessedAsset::process failed
+- Execution of evaluate_webpack_loader failed
+- creating new process
+- node process exited before we could connect to it with exit code: 0
+  Process output:
+  
+  Process error output: @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:1760
+[   25455ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_client_16lnmlosr3ca7._.js:1013
+[   26469ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_client_16lnmlosr3ca7._.js:1013
+[   27485ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_client_16lnmlosr3ca7._.js:1013
+[   28502ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_client_16lnmlosr3ca7._.js:1013
+[   29517ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_client_16lnmlosr3ca7._.js:1013
+[   34885ms] [LOG] [HMR] connected @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:703
+[   34888ms] [LOG] [Fast Refresh] done in 20048ms @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js:703

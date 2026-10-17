@@ -3,7 +3,8 @@ const path = require("path");
 const dev = process.env.NODE_ENV !== "production";
 
 module.exports = {
-  presets: ["next/babel"],
+  // Preserve async Server Actions and Unicode regexes for Next.js-supported browsers.
+  presets: [["next/babel", { "preset-env": { targets: { chrome: "111", edge: "111", firefox: "111", safari: "16.4" } } }]],
   plugins: [
     [
       "@stylexjs/babel-plugin",

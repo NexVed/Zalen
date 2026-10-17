@@ -1,36 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import { Providers } from "@/app/providers";
-import { SyncUser } from "@/components/SyncUser";
+import "@fontsource-variable/inter";
+import "@fontsource-variable/space-grotesk";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "Zalen",
-  description: "Zalen — Next.js · Convex · Clerk · StyleX · Go Fiber",
+  title: "Zalen — Where potential becomes opportunity",
+  description: "Find your next startup challenge, show what you can do, and turn real work into your next opportunity.",
 };
-
-export default function RootLayout({ children }: LayoutProps<"/">) {
+const themeScript = `(function(){try{var t=localStorage.getItem('zalen-theme');document.documentElement.dataset.theme=t==='light'||t==='dark'?t:window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'}catch(e){}})()`;
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">
-        <Providers>
-          <SyncUser />
-          {children}
-        </Providers>
-      </body>
+    <html lang="en" data-theme="dark" suppressHydrationWarning>
+      <head><script dangerouslySetInnerHTML={{ __html: themeScript }} /></head>
+      <body><a className="skip-link" href="#main">Skip to content</a><Providers>{children}</Providers></body>
     </html>
   );
 }
