@@ -32,6 +32,15 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
+!**/.env.example
+
+# convex local state
+.convex/
+
+# go
+/server/bin/
+/server/tmp/
 
 # vercel
 .vercel

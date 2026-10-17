@@ -4,22 +4,35 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:web": "next dev",
+    "dev:api": "cd server && go run ./cmd/api",
+    "dev:convex": "convex dev",
+    "dev:all": "concurrently -n web,convex,api -c blue,magenta,green \"next dev\" \"convex dev\" \"cd server && go run ./cmd/api\"",
+    "convex:codegen": "convex codegen",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@clerk/nextjs": "^7.9.17",
+    "@stylexjs/stylex": "^0.19.1",
+    "convex": "^1.47.0",
     "next": "16.4.2",
     "react": "19.3.0",
     "react-dom": "19.3.0"
   },
   "devDependencies": {
-    "@tailwindcss/turbopack": "^4",
+    "@stylexjs/babel-plugin": "^0.19.1",
+    "@stylexjs/postcss-plugin": "^0.19.1",
+    "@tailwindcss/postcss": "^4.3.3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "concurrently": "^10.0.6",
     "eslint": "^9",
     "eslint-config-next": "16.4.2",
+    "postcss": "^8.5.30",
     "tailwindcss": "^4",
     "typescript": "^5"
   },

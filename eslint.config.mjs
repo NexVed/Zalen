@@ -12,6 +12,13 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Build-time config (CommonJS by necessity).
+    "babel.config.js",
+    "postcss.config.js",
+    // Convex codegen output.
+    "convex/_generated/**",
+    // Go service.
+    "server/**",
   ]),
 ]);
 
