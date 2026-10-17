@@ -2,7 +2,7 @@
 import type { FormEvent } from "react";
 import * as stylex from "@stylexjs/stylex";
 import { ArrowUpRight, Check, Link2, Send } from "lucide-react";
-import { cities, type DemoState, type Opportunity, type OpportunityType, type PortfolioItem } from "@/lib/demo-data";
+import { cities, type DemoState, type Opportunity, type OpportunityType } from "@/lib/demo-data";
 import { colors } from "@/styles/tokens.stylex";
 import { ui } from "./ui";
 
@@ -12,16 +12,6 @@ function validateLink(form: HTMLFormElement, value: string) {
   const input = form.elements.namedItem("link") as HTMLInputElement | null;
   input?.setCustomValidity(urlIsSafe(value) ? "" : "Use an https:// or http:// link.");
   return form.reportValidity();
-}
-
-export function ProfileForm({ profile, onSave }: { profile: DemoState["profile"]; onSave: (profile: DemoState["profile"]) => void }) {
-  return <form {...stylex.props(formStyles.form)} onSubmit={event => { const data = formData(event); const link = String(data.get("link") ?? "").trim(); if (!validateLink(event.currentTarget, link)) return; onSave({ name: String(data.get("name")).trim(), headline: String(data.get("headline")).trim(), skills: String(data.get("skills")).trim(), link }); }}>
-    <label {...stylex.props(ui.label)}>Your name<input name="name" defaultValue={profile.name} readOnly title="Update your name using the account menu" maxLength={60} {...stylex.props(ui.input)} /></label>
-    <label {...stylex.props(ui.label)}>Professional headline<input name="headline" defaultValue={profile.headline} required maxLength={120} {...stylex.props(ui.input)} /></label>
-    <label {...stylex.props(ui.label)}>Your skills<input name="skills" defaultValue={profile.skills} required placeholder="UI/UX Design, Figma, React" {...stylex.props(ui.input)} /><span {...stylex.props(ui.caption)}>Separate skills with commas.</span></label>
-    <label {...stylex.props(ui.label)}>Portfolio or GitHub link<input name="link" type="url" defaultValue={profile.link} placeholder="https://your-portfolio.com" onChange={e => e.currentTarget.setCustomValidity("")} {...stylex.props(ui.input)} /><span {...stylex.props(ui.caption)}>Add a link to complete your profile.</span></label>
-    <button type="submit" {...stylex.props(ui.primary)}><Check size={15} />Save profile</button>
-  </form>;
 }
 
 export function ApplicationForm({ item, state, onSubmit }: { item: Opportunity; state: DemoState; onSubmit: (note: string, link: string) => void }) {
@@ -37,15 +27,6 @@ export function ApplicationForm({ item, state, onSubmit }: { item: Opportunity; 
         <span {...stylex.props(ui.caption)}>Demo application · Saved on this device, not sent to a company.</span><button {...stylex.props(ui.primary)} type="submit"><Send size={14} />Save demo application</button>
       </form></>}
   </div>;
-}
-
-export function PortfolioForm({ onSave }: { onSave: (project: PortfolioItem) => void }) {
-  return <form {...stylex.props(formStyles.form)} onSubmit={event => { const data = formData(event); const link = String(data.get("link")).trim(); if (!validateLink(event.currentTarget, link)) return; onSave({ id: crypto.randomUUID(), title: String(data.get("title")).trim(), type: String(data.get("type")), link }); }}>
-    <label {...stylex.props(ui.label)}>Project title<input name="title" required maxLength={100} placeholder="What did you bring to life?" {...stylex.props(ui.input)} /></label>
-    <label {...stylex.props(ui.label)}>Discipline<select name="type" {...stylex.props(ui.input)}><option>Product design</option><option>Frontend development</option><option>Data analysis</option><option>Branding</option><option>Other</option></select></label>
-    <label {...stylex.props(ui.label)}>Project link<input name="link" type="url" required placeholder="https://" onChange={e => e.currentTarget.setCustomValidity("")} {...stylex.props(ui.input)} /></label>
-    <button type="submit" {...stylex.props(ui.primary)}>Add to your portfolio <ArrowUpRight size={15} /></button>
-  </form>;
 }
 
 export function PostOpportunityForm({ onSave, category }: { onSave: (item: Opportunity) => void; category?: OpportunityType }) {

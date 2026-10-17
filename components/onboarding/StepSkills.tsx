@@ -12,6 +12,7 @@ interface StepSkillsProps {
   onNext: (skills: SkillEntry[]) => Promise<void>;
   onBack: () => void;
   isLoading: boolean;
+  submitLabel?: string;
 }
 
 const PREDEFINED_SKILLS = [
@@ -25,7 +26,7 @@ const PREDEFINED_SKILLS = [
 const PROFICIENCY_OPTIONS = ["Beginner", "Intermediate", "Advanced", "Expert"];
 const MAX_SKILLS = 30;
 
-export function StepSkills({ skills, onChange, onNext, onBack, isLoading }: StepSkillsProps) {
+export function StepSkills({ skills, onChange, onNext, onBack, isLoading, submitLabel = "Save & continue" }: StepSkillsProps) {
   const [search, setSearch] = useState("");
   const [customSkill, setCustomSkill] = useState("");
 
@@ -154,9 +155,9 @@ export function StepSkills({ skills, onChange, onNext, onBack, isLoading }: Step
       )}
 
       <div {...stylex.props(s.actions)}>
-        <button type="button" {...stylex.props(ui.secondary)} onClick={onBack}>Back</button>
+        <button type="button" {...stylex.props(ui.secondary)} disabled={isLoading} onClick={onBack}>Back</button>
         <button type="button" {...stylex.props(ui.primary)} onClick={handleContinue} disabled={isLoading}>
-          {isLoading ? "Saving…" : "Continue"}
+          {isLoading ? "Saving…" : submitLabel}
         </button>
       </div>
     </div>

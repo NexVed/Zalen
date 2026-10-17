@@ -102,12 +102,12 @@ export function StepReview({
   return (
     <div {...stylex.props(s.container)}>
       <p {...stylex.props(s.description)}>
-        Review your profile before publishing. You can edit any section.
+        Review your saved profile details. You can edit any section.
       </p>
 
       {/* Basic info */}
       <ReviewCard title="Basic info" step={1} onEdit={onEditStep}>
-        <Row label="Name" value={clerkUser?.fullName ?? "—"} />
+        <Row label="Name" value={clerkUser?.fullName || "—"} />
         <Row label="Email" value={clerkUser?.primaryEmailAddress?.emailAddress} />
         {basicInfo?.phone && (
           <Row label="Phone" value={`${basicInfo.phoneCountryCode ?? ""} ${basicInfo.phone}`} />

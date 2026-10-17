@@ -11,6 +11,7 @@ interface StepRoleDetailsProps {
   onNext: (data: Record<string, unknown>) => Promise<void>;
   onBack: () => void;
   isLoading: boolean;
+  submitLabel?: string;
 }
 
 function Field({
@@ -57,7 +58,7 @@ function Sel({
   );
 }
 
-export function StepRoleDetails({ role, data, onChange, onNext, onBack, isLoading }: StepRoleDetailsProps) {
+export function StepRoleDetails({ role, data, onChange, onNext, onBack, isLoading, submitLabel = "Save & continue" }: StepRoleDetailsProps) {
   function set(key: string, value: unknown) {
     onChange({ ...data, [key]: value });
   }
@@ -460,9 +461,9 @@ export function StepRoleDetails({ role, data, onChange, onNext, onBack, isLoadin
       </p>
       {renderFields()}
       <div {...stylex.props(s.actions)}>
-        <button type="button" {...stylex.props(ui.secondary)} onClick={onBack}>Back</button>
+        <button type="button" {...stylex.props(ui.secondary)} disabled={isLoading} onClick={onBack}>Back</button>
         <button type="submit" {...stylex.props(ui.primary)} disabled={isLoading}>
-          {isLoading ? "Saving…" : "Continue"}
+          {isLoading ? "Saving…" : submitLabel}
         </button>
       </div>
     </form>

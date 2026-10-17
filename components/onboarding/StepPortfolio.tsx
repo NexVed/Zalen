@@ -17,6 +17,7 @@ interface StepPortfolioProps {
   onNext: () => void;
   onBack: () => void;
   isLoading: boolean;
+  submitLabel?: string;
 }
 
 const emptyProject: Omit<ProjectEntry, "id"> = {
@@ -51,19 +52,21 @@ export function StepPortfolio({
   onNext,
   onBack,
   isLoading,
+  submitLabel = "Save & continue",
 }: StepPortfolioProps) {
+  const [error, setError] = useState("");
   const [showProjectForm, setShowProjectForm] = useState(false);
-  const [projectForm, setProjectForm] = useState({ ...emptyProject });
+  const [projectForm, setProjectForm] = useState<ProjectEntry>({ ...emptyProject });
   const [projectSubmitting, setProjectSubmitting] = useState(false);
 
   const [showAchievementForm, setShowAchievementForm] = useState(false);
-  const [achievementForm, setAchievementForm] = useState({ ...emptyAchievement });
+  const [achievementForm, setAchievementForm] = useState<AchievementEntry>({ ...emptyAchievement });
   const [achievementSubmitting, setAchievementSubmitting] = useState(false);
 
   async function handleAddProject(e: React.FormEvent) {
     e.preventDefault();
     if (!projectForm.title.trim()) return;
-    setProjectSubmitting(true);
+    setError(""); setProjectSubmitting(true);
     try {
       await onAddProject({
         ...projectForm,
@@ -73,6 +76,8 @@ export function StepPortfolio({
       });
       setProjectForm({ ...emptyProject });
       setShowProjectForm(false);
+    } catch {
+      setError("Could not save. Please check the fields and try again.");
     } finally {
       setProjectSubmitting(false);
     }
@@ -80,17 +85,19 @@ export function StepPortfolio({
 
   async function handleDeleteProject(id: string) {
     if (!window.confirm("Delete this project? This cannot be undone.")) return;
-    await onDeleteProject(id);
+    try { await onDeleteProject(id); } catch { setError("Could not delete this project. Please try again."); }
   }
 
   async function handleAddAchievement(e: React.FormEvent) {
     e.preventDefault();
     if (!achievementForm.title.trim()) return;
-    setAchievementSubmitting(true);
+    setError(""); setAchievementSubmitting(true);
     try {
       await onAddAchievement(achievementForm);
       setAchievementForm({ ...emptyAchievement });
       setShowAchievementForm(false);
+    } catch {
+      setError("Could not save. Please check the fields and try again.");
     } finally {
       setAchievementSubmitting(false);
     }
@@ -98,11 +105,12 @@ export function StepPortfolio({
 
   async function handleDeleteAchievement(id: string) {
     if (!window.confirm("Delete this achievement? This cannot be undone.")) return;
-    await onDeleteAchievement(id);
+    try { await onDeleteAchievement(id); } catch { setError("Could not delete this achievement. Please try again."); }
   }
 
   return (
     <div {...stylex.props(s.container)}>
+      {error && <p role="alert">{error}</p>}
       <p {...stylex.props(s.description)}>
         Showcase your work. Both sections are optional — you can add more later from your profile.
       </p>
@@ -117,7 +125,7 @@ export function StepPortfolio({
           <button
             type="button"
             {...stylex.props(ui.secondary, s.addBtn)}
-            onClick={() => setShowProjectForm(v => !v)}
+            onClick={() => { setShowProjectForm(v => !v); setProjectForm({ ...emptyProject }); setError(""); }}
           >
             {showProjectForm ? <ChevronUp size={14} /> : <Plus size={14} />}
             {showProjectForm ? "Cancel" : "Add project"}
@@ -254,18 +262,19 @@ export function StepPortfolio({
                     )}
                     <div {...stylex.props(s.linkRow)}>
                       {project.status && <span {...stylex.props(ui.pill, ui.green)}>{project.status}</span>}
-                      {project.liveUrl && (
+                      {project.liveUrl && /^https?:\/\//i.test(project.liveUrl) && (
                         <a href={project.liveUrl} target="_blank" rel="noreferrer" {...stylex.props(s.link)}>
                           <ExternalLink size={12} /> Live
                         </a>
                       )}
-                      {project.repoUrl && (
+                      {project.repoUrl && /^https?:\/\//i.test(project.repoUrl) && (
                         <a href={project.repoUrl} target="_blank" rel="noreferrer" {...stylex.props(s.link)}>
                           <GitBranch size={12} /> Repo
                         </a>
                       )}
                     </div>
                   </div>
+                  <button type="button" {...stylex.props(ui.textButton)} onClick={() => { setProjectForm(project); setShowProjectForm(true); setError(""); }}>Edit</button>
                   <button
                     type="button"
                     {...stylex.props(s.deleteBtn)}
@@ -293,7 +302,7 @@ export function StepPortfolio({
           <button
             type="button"
             {...stylex.props(ui.secondary, s.addBtn)}
-            onClick={() => setShowAchievementForm(v => !v)}
+            onClick={() => { setShowAchievementForm(v => !v); setAchievementForm({ ...emptyAchievement }); setError(""); }}
           >
             {showAchievementForm ? <ChevronUp size={14} /> : <Plus size={14} />}
             {showAchievementForm ? "Cancel" : "Add achievement"}
@@ -392,13 +401,14 @@ export function StepPortfolio({
                     )}
                     <div {...stylex.props(s.linkRow)}>
                       {ach.category && <span {...stylex.props(ui.pill, ui.purple)}>{ach.category}</span>}
-                      {ach.credentialUrl && (
+                      {ach.credentialUrl && /^https?:\/\//i.test(ach.credentialUrl) && (
                         <a href={ach.credentialUrl} target="_blank" rel="noreferrer" {...stylex.props(s.link)}>
                           <ExternalLink size={12} /> Credential
                         </a>
                       )}
                     </div>
                   </div>
+                  <button type="button" {...stylex.props(ui.textButton)} onClick={() => { setAchievementForm(ach); setShowAchievementForm(true); setError(""); }}>Edit</button>
                   <button
                     type="button"
                     {...stylex.props(s.deleteBtn)}
@@ -420,9 +430,9 @@ export function StepPortfolio({
           type="button"
           {...stylex.props(ui.primary)}
           onClick={onNext}
-          disabled={isLoading}
+          disabled={isLoading || projectSubmitting || achievementSubmitting}
         >
-          Continue
+          {submitLabel}
         </button>
       </div>
     </div>

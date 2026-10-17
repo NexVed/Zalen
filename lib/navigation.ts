@@ -8,12 +8,12 @@ export const navigation = [
   { name: "Gigs", path: "/gigs", description: "Browse paid freelance projects by budget and skill." },
   { name: "Events", path: "/events", description: "Browse meetups, workshops, and upcoming events." },
   { name: "My workspace", path: "/workspace", description: "Manage applications and portfolio projects." },
-  { name: "Profile", path: "/profile", description: "Your profile, skills, and portfolio." },
 ] as const;
 
 export type HubView = "Freelancers" | "Forum" | "Investors" | "B2B";
-export type View = typeof navigation[number]["name"] | "Opportunities" | "Community";
+export type View = typeof navigation[number]["name"] | "Opportunities" | "Community" | "Profile";
 const aliases = [
+  { name: "Profile" as const, path: "/profile", description: "Manage your profile, skills, and work." },
   { name: "Opportunities" as const, path: "/opportunities", description: "Explore all startup opportunities." },
   { name: "Community" as const, path: "/community", description: "Meet other builders and find your next event." },
 ];

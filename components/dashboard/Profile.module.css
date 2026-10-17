@@ -1,0 +1,38 @@
+.page { display: grid; gap: 24px; }
+.identity, .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: clamp(20px, 3vw, 32px); min-width: 0; }
+.identityTop { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.avatar { display: grid; place-items: center; width: 100px; height: 100px; border-radius: 24px; background: var(--surface-pink); color: var(--accent-primary); font-size: 40px; flex-shrink: 0; overflow: hidden; }
+.avatar img { width: 100%; height: 100%; object-fit: cover; }
+.name { flex: 1; min-width: min(100%, 200px); }
+.name h2 { font-family: var(--font-display); font-size: clamp(26px, 3vw, 36px); letter-spacing: -.8px; margin: 4px 0 8px; overflow-wrap: anywhere; }
+.name p, .card p { font-size: 13px; color: var(--text-secondary); line-height: 1.8; }
+.caption { display: block; font-size: 11px; color: var(--text-muted); line-height: 1.8; }
+.bio { max-width: 720px; font-size: 14px; color: var(--text-secondary); line-height: 1.9; white-space: pre-wrap; margin: 24px 0 16px; overflow-wrap: anywhere; }
+.tags { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 16px; }
+.tags span { display: inline-flex; align-items: center; gap: 6px; border-radius: 6px; padding: 6px 10px; background: var(--bg-elevated); color: var(--text-secondary); font-size: 12px; overflow-wrap: anywhere; }
+.columns { display: grid; grid-template-columns: minmax(0, 1.8fr) minmax(260px, 1fr); gap: 24px; align-items: start; }
+.mainColumn, .sideColumn { display: grid; gap: 24px; min-width: 0; }
+.heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+.card h2 { display: flex; align-items: center; gap: 8px; font-family: var(--font-display); font-size: 18px; font-weight: 500; }
+.card h3 { font-size: 16px; line-height: 1.6; overflow-wrap: anywhere; }
+.card .heading p { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+.primary, .secondary, .edit, .link, .links a { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-size: 13px; min-height: 44px; padding: 10px 16px; border-radius: 10px; font-weight: 500; }
+.primary { background: var(--accent-primary); color: var(--on-accent); }
+.secondary { background: var(--bg-elevated); color: var(--text-secondary); border: 1px solid var(--border); }
+.edit, .link, .links a { color: var(--accent-primary); background: transparent; padding: 8px 0; justify-content: flex-start; }
+.empty { color: var(--text-muted); font-size: 13px; line-height: 1.8; }
+.empty button { margin-top: 16px; }
+.items { display: grid; gap: 16px; }
+.item { border-top: 1px solid var(--border); padding-top: 20px; display: grid; gap: 8px; }
+.item .tags { margin-top: 4px; }
+.links { display: flex; flex-wrap: wrap; gap: 20px; }
+.details { display: grid; gap: 16px; margin: 20px 0; }
+.details dt { text-transform: capitalize; font-size: 11px; color: var(--text-muted); margin-bottom: 6px; }
+.details dd { font-size: 13px; color: var(--text-secondary); overflow-wrap: anywhere; }
+.card .contact { overflow-wrap: anywhere; margin: 12px 0; }
+.notice, .setup { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; background: var(--surface-pink); color: var(--text-primary); border: 1px solid var(--border); border-radius: 12px; padding: 20px; font-size: 13px; }
+.notice button { margin-left: auto; background: transparent; color: var(--accent-primary); min-height: 44px; }
+.setup { justify-content: space-between; }
+.setup h2 { font-size: 18px; margin-bottom: 8px; }
+.setup p { color: var(--text-secondary); font-size: 13px; }
+@media(max-width: 800px) { .columns { grid-template-columns: 1fr; } .identityTop { gap: 16px; } .avatar { width: 72px; height: 72px; border-radius: 16px; } .card p, .bio { font-size: 14px; } }

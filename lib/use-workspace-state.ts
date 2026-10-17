@@ -1,5 +1,6 @@
 "use client";
 import { useMemo, useSyncExternalStore } from "react";
+import { useAccountProfile } from "@/components/SyncUser";
 import { initialDemo, type DemoState } from "./demo-data";
 
 // Local workspace activity is isolated by Clerk account. Never import the old
@@ -45,6 +46,14 @@ function createStore(userId: string | null) {
 export function useWorkspaceState(userId: string | null, name: string) {
   const store = useMemo(() => createStore(userId), [userId]);
   const saved = useSyncExternalStore(store.subscribe, store.read, () => initialDemo);
-  const state = useMemo(() => ({ ...saved, profile: { ...saved.profile, name: name || saved.profile.name } }), [saved, name]);
-  return [state, (updater: (value: DemoState) => DemoState) => store.update(current => updater({ ...current, profile: { ...current.profile, name: name || current.profile.name } }))] as const;
+  const { bundle } = useAccountProfile();
+  // Profile and portfolio are always read from Convex; the remaining sample
+  // opportunity activity still uses the account's local workspace.
+  const state = useMemo(() => ({ ...saved, profile: {
+    name: bundle?.user.name || name,
+    headline: bundle?.profile?.bio || "",
+    skills: bundle?.skills.map(skill => skill.name).join(", ") || "",
+    link: bundle?.projects[0]?.liveUrl || bundle?.projects[0]?.repoUrl || "",
+  }, portfolio: bundle?.projects.map(project => ({ id: project._id, title: project.title, type: project.category || "Project", link: project.liveUrl || project.repoUrl || "" })) ?? [] }), [saved, bundle, name]);
+  return [state, (updater: (value: DemoState) => DemoState) => store.update(current => updater({ ...current, profile: state.profile, portfolio: state.portfolio }))] as const;
 }

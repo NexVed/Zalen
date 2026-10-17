@@ -14,6 +14,7 @@ interface StepRoleSelectionProps {
   onNext: (role: string) => Promise<void>;
   onBack: () => void;
   isLoading: boolean;
+  submitLabel?: string;
 }
 
 const roleIcons: Record<string, React.ElementType> = {
@@ -27,7 +28,7 @@ const roleIcons: Record<string, React.ElementType> = {
   institution: Landmark,
 };
 
-export function StepRoleSelection({ selectedRole, onChange, onNext, onBack, isLoading }: StepRoleSelectionProps) {
+export function StepRoleSelection({ selectedRole, onChange, onNext, onBack, isLoading, submitLabel = "Save & continue" }: StepRoleSelectionProps) {
   async function handleContinue() {
     if (!selectedRole) return;
     await onNext(selectedRole);
@@ -47,6 +48,8 @@ export function StepRoleSelection({ selectedRole, onChange, onNext, onBack, isLo
             <button
               key={role.id}
               type="button"
+              aria-pressed={isSelected}
+              disabled={isLoading}
               onClick={() => onChange(role.id)}
               {...stylex.props(s.card, isSelected && s.cardSelected)}
             >
@@ -70,7 +73,7 @@ export function StepRoleSelection({ selectedRole, onChange, onNext, onBack, isLo
           onClick={handleContinue}
           disabled={!selectedRole || isLoading}
         >
-          {isLoading ? "Saving…" : "Continue"}
+          {isLoading ? "Saving…" : submitLabel}
         </button>
       </div>
     </div>
