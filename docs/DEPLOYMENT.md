@@ -33,12 +33,10 @@ APP_ENV=production
 CLERK_JWT_ISSUER_DOMAIN=https://<your-clerk-issuer>
 CONVEX_URL=https://intent-seahorse-820.ap-southeast-2.convex.cloud
 CONVEX_DEPLOY_KEY=<existing production deploy key>
-PUBLIC_API_URL=https://<your-api-hostname>
-WEB_URL=https://<your-web-hostname>
-CORS_ALLOWED_ORIGINS=https://<your-web-hostname>
+CORS_ALLOWED_ORIGINS=*
 ```
 
-The host supplies `PORT`; the container listens on `0.0.0.0:$PORT`. Use the HTTPS hostname assigned by the host. `/mcp` is the MCP endpoint. `WEB_URL` allows the API to call the web app's business-search route.
+The host supplies `PORT`; the container listens on `0.0.0.0:$PORT`. `/mcp` is the MCP endpoint. `CORS_ALLOWED_ORIGINS=*` allows browser calls from the deployed site.
 
 The deploy key belongs only on the API host. Never add it to a `NEXT_PUBLIC_*` variable or to a Docker build argument.
 
@@ -72,7 +70,7 @@ GEOAPIFY_API_KEY=<your Geoapify key>
 
 `NEXT_PUBLIC_*` values are public and baked into the browser bundle. Changing one requires rebuilding the web app. Clerk and Geoapify secret keys stay on the web host at runtime.
 
-After obtaining the website hostname, update `WEB_URL` and `CORS_ALLOWED_ORIGINS` on the API host. Register the hostname in Clerk, and in Geoapify if your key has origin restrictions. Match the Clerk `convex` JWT template's issuer/audience to `convex/auth.config.ts` and the Convex `CLERK_JWT_ISSUER_DOMAIN` environment variable. Use the matching Clerk instance; do not mix test and live keys.
+Register the website hostname in Clerk, and in Geoapify if your key has origin restrictions. Match the Clerk `convex` JWT template's issuer/audience to `convex/auth.config.ts` and the Convex `CLERK_JWT_ISSUER_DOMAIN` environment variable. Use the matching Clerk instance; do not mix test and live keys.
 
 ## 3. Deploy the web Docker image instead
 
