@@ -12,7 +12,9 @@ import (
 
 	"zalen/server/internal/auth"
 	"zalen/server/internal/config"
+	"zalen/server/internal/convex"
 	"zalen/server/internal/handlers"
+	"zalen/server/internal/mcp"
 	"zalen/server/internal/middleware"
 )
 
@@ -28,12 +30,14 @@ func New(cfg config.Config) *fiber.App {
 	app.Use(logger.New())
 	app.Use(cors.New(cors.Config{
 		AllowOrigins:     strings.Join(cfg.CORSAllowedOrigins, ","),
-		AllowHeaders:     "Origin, Content-Type, Accept, Authorization",
+		AllowHeaders:     "Origin, Content-Type, Accept, Authorization, Mcp-Session-Id, Mcp-Protocol-Version",
 		AllowMethods:     "GET, POST, PUT, PATCH, DELETE, OPTIONS",
 		AllowCredentials: true,
 	}))
 
 	verifier := auth.NewVerifier(cfg.ClerkJWTIssuer)
+	mcpServer := mcp.New(convex.New(cfg.ConvexURL, cfg.ConvexDeployKey), verifier, cfg.PublicURL, cfg.WebURL)
+	app.All("/mcp", handlers.MCP(mcpServer))
 
 	api := app.Group("/api/v1")
 	{

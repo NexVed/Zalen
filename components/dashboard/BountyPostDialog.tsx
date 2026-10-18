@@ -6,9 +6,11 @@
  * Fields: title, type, reward (optional), description, repo URL (optional), tags.
  */
 import { useState } from "react";
+import * as Dialog from "@radix-ui/react-dialog";
 import * as stylex from "@stylexjs/stylex";
 import { ArrowUpRight, X } from "lucide-react";
 import { ui } from "./ui";
+import { BoardDialog } from "./BoardDialog";
 import styles from "./Hub.module.css";
 import bountyStyles from "./Bounties.module.css";
 
@@ -89,24 +91,12 @@ export function BountyPostDialog({
   }
 
   return (
-    <div
-      className={styles.overlay}
-      style={{ display: "flex", alignItems: "center", justifyContent: "center" }}
-      onClick={onClose}
-    >
-      <div
-        className={styles.dialog}
-        style={{ maxWidth: 660 }}
-        onClick={(e) => e.stopPropagation()}
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="bounty-post-title"
-      >
+    <BoardDialog title={initial ? "Edit bounty" : "Post a bounty"} onClose={onClose} maxWidth={600}>
         {/* Header */}
         <div className={styles.dialogHeading}>
-          <h2 className={styles.dialogTitle} id="bounty-post-title">
+          <Dialog.Title className={styles.dialogTitle}>
             {initial ? "Edit bounty" : "Post a bounty"}
-          </h2>
+          </Dialog.Title>
           <button {...stylex.props(ui.iconButton)} aria-label="Close" onClick={onClose}>
             <X size={18} />
           </button>
@@ -231,7 +221,6 @@ export function BountyPostDialog({
             <ArrowUpRight size={14} />
           </button>
         </form>
-      </div>
-    </div>
+    </BoardDialog>
   );
 }

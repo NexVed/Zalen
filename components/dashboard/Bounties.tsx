@@ -14,7 +14,7 @@ import {
   Users,
   Trophy,
   Bug,
-  Sparkles,
+  Lightbulb,
   Code2,
   Palette,
   FileText,
@@ -60,7 +60,7 @@ export type Bounty = {
 
 const TYPE_ICONS: Record<string, React.ElementType> = {
   bug: Bug,
-  feature: Sparkles,
+  feature: Lightbulb,
   code_review: Code2,
   design: Palette,
   docs: FileText,

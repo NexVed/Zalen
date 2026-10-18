@@ -17,6 +17,8 @@ import { Gigs, type Gig } from "./Gigs";
 import { GigPostDialog, type GigFormValues } from "./GigPostDialog";
 import { GigDetailDialog } from "./GigDetailDialog";
 import { ui } from "./ui";
+import { useLiveQuery } from "@/lib/use-live-query";
+import { ServiceState } from "./ServiceState";
 import styles from "./Hub.module.css";
 
 // ---------------------------------------------------------------------------
@@ -73,10 +75,10 @@ export function GigsPage({
   const currentUserId = (convexUser?._id ?? null) as Id<"users"> | null;
 
   // Fetch gigs from Convex
-  const rawGigs = useQuery(api.gigs.listGigs, {
+  const { data: rawGigs, error: loadError, retry } = useLiveQuery(api.gigs.listGigs, {
     category: categoryFilter || undefined,
     status: statusFilter || undefined,
-  }) as (Gig & { myProposalId: Id<"gigApplications"> | null })[] | undefined;
+  });
 
   // Mutations
   const createGig = useMutation(api.gigs.createGig);
@@ -146,6 +148,7 @@ export function GigsPage({
             Post paid projects and find talented freelancers. Browse open gigs
             and submit a proposal to get hired.
           </p>
+        </div>
           <button
             {...stylex.props(ui.primary)}
             onClick={() => requireAccount(() => setShowPost(true))}
@@ -153,7 +156,6 @@ export function GigsPage({
             Post a gig
             <ArrowUpRight size={15} />
           </button>
-        </div>
       </section>
 
       {/* Toast */}
@@ -221,12 +223,13 @@ export function GigsPage({
         ))}
       </div>
 
+      {(search || categoryFilter || statusFilter !== "open") && <button className={styles.cardButton} onClick={() => { onSearch(""); setCategoryFilter(""); setStatusFilter("open"); }}>Clear filters</button>}
       {/* Meta bar */}
       <div className={styles.meta}>
         <span>
-          {loading
+          {loadError ? "Could not load results" : loading
             ? "Loading gigs…"
-            : `${gigs.length} ${gigs.length === 1 ? "gig" : "gigs"} · Powered by Convex`}
+            : `${gigs.length} ${gigs.length === 1 ? "gig" : "gigs"}`}
         </span>
         {userId && (
           <button
@@ -241,10 +244,8 @@ export function GigsPage({
 
       {/* Gig list */}
       <section id="gig-results" aria-label="Gig results">
-        {loading ? (
-          <div className={styles.empty}>
-            <p>Loading gigs…</p>
-          </div>
+        {loadError ? <ServiceState title="Gigs" onRetry={retry} /> : loading ? (
+          <ServiceState title="Gigs" loading />
         ) : (
           <Gigs
             gigs={gigs}

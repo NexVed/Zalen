@@ -9,12 +9,14 @@
  *  - An optional external link with an optional display title
  */
 import { useRef, useState } from "react";
+import * as Dialog from "@radix-ui/react-dialog";
 import * as stylex from "@stylexjs/stylex";
 import { ArrowUpRight, ImagePlus, Link as LinkIcon, X, Loader2 } from "lucide-react";
 import { useMutation } from "convex/react";
 import { api } from "@/convex/_generated/api";
 import type { Id } from "@/convex/_generated/dataModel";
 import { ui } from "./ui";
+import { BoardDialog } from "./BoardDialog";
 import styles from "./Hub.module.css";
 
 const MAX_IMAGES = 4;
@@ -153,22 +155,12 @@ export function ForumPostDialog({
   }
 
   return (
-    /* Backdrop */
-    <div
-      className={styles.overlay}
-      style={{ display: "flex", alignItems: "center", justifyContent: "center" }}
-      onClick={onClose}
-    >
-      <div
-        className={styles.dialog}
-        style={{ maxWidth: 640 }}
-        onClick={(e) => e.stopPropagation()}
-      >
+    <BoardDialog title={initial ? "Edit post" : "Start a discussion"} onClose={onClose} maxWidth={640}>
         {/* Header */}
         <div className={styles.dialogHeading}>
-          <h2 className={styles.dialogTitle}>
+          <Dialog.Title className={styles.dialogTitle}>
             {initial ? "Edit post" : "Start a discussion"}
-          </h2>
+          </Dialog.Title>
           <button {...stylex.props(ui.iconButton)} aria-label="Close" onClick={onClose}>
             <X size={18} />
           </button>
@@ -315,7 +307,7 @@ export function ForumPostDialog({
             )}
           </div>
 
-          {error && <p className={styles.formError} role="alert">{error}</p>}
+          {error && <p role="alert" className={styles.formError}>{error}</p>}
 
           <button
             type="submit"
@@ -332,7 +324,6 @@ export function ForumPostDialog({
             <ArrowUpRight size={14} />
           </button>
         </form>
-      </div>
-    </div>
+    </BoardDialog>
   );
 }

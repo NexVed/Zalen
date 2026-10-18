@@ -1,0 +1,82 @@
+.card { border: 1px solid var(--border); border-radius: 16px; background: var(--bg-card); overflow: hidden; min-width: 0; }
+.header { display: flex; align-items: center; gap: 16px; padding: 28px; border-bottom: 1px solid var(--border-subtle); }
+.emblem { width: 48px; height: 48px; border-radius: 12px; display: grid; place-items: center; color: var(--accent-primary); background: var(--surface-pink); flex-shrink: 0; }
+.header h2 { font-family: var(--font-display); font-size: 23px; letter-spacing: -.5px; font-weight: 500; }
+.header p, .sectionHeading p { margin-top: 8px; color: var(--text-muted); font-size: 13px; line-height: 1.7; }
+.transport { margin-left: auto; font-size: 11px; color: var(--text-muted); border: 1px solid var(--border); padding: 5px 8px; border-radius: 5px; }
+.steps { display: flex; padding: 20px 28px; gap: 12px; border-bottom: 1px solid var(--border-subtle); }
+.steps > button { flex: 1; display: flex; align-items: center; justify-content: flex-start; gap: 10px; min-height: 44px; background: transparent; color: var(--text-muted); text-align: left; font-size: 13px; }
+.steps > button > span { border: 1px solid var(--border); border-radius: 50%; width: 26px; height: 26px; display: grid; place-items: center; flex-shrink: 0; font-size: 11px; }
+.steps > button > svg { margin-left: auto; }
+.steps > button[aria-current="step"] { color: var(--text-primary); font-weight: 600; }
+.steps > button[aria-current="step"] > span { background: var(--accent-primary); border-color: var(--accent-primary); color: var(--on-accent); }
+.body { padding: 28px; display: grid; gap: 24px; }
+.sectionHeading h3 { font-size: 17px; font-weight: 500; line-height: 1.5; }
+.clients { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 14px; }
+.clients > button { display: flex; position: relative; flex-direction: column; align-items: flex-start; gap: 12px; padding: 24px 20px; border: 1px solid var(--border); border-radius: 12px; color: var(--text-secondary); background: transparent; text-align: left; }
+.clients > button[aria-pressed="true"] { background: var(--surface-pink); border-color: var(--accent-primary); color: var(--text-primary); }
+.clients strong { font-size: 15px; font-weight: 500; }
+.clients span { color: var(--text-muted); font-size: 12px; }
+.selected { position: absolute; top: 16px; right: 16px; color: var(--accent-primary); }
+.actions { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.primary, .secondary, .textButton, .copyButton, .dangerButton { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; border-radius: 8px; font-size: 13px; font-weight: 500; }
+.primary { background: var(--accent-primary); color: var(--on-accent); padding: 10px 18px; }
+.secondary { background: var(--bg-elevated); border: 1px solid var(--border); color: var(--text-primary); padding: 10px 16px; }
+.textButton { background: transparent; color: var(--accent-primary); padding: 4px 0; }
+button:disabled.primary, button:disabled.secondary, button:disabled.copyButton { opacity: .5; cursor: not-allowed; }
+.helper { color: var(--text-muted); font-size: 12px; line-height: 1.8; }
+.keyForm { display: flex; gap: 12px; align-items: flex-end; flex-wrap: wrap; }
+.keyForm label { flex: 1; min-width: 160px; }
+.card label { display: flex; flex-direction: column; gap: 10px; color: var(--text-secondary); font-size: 13px; }
+.card input { min-width: 0; width: 100%; min-height: 44px; padding: 12px 14px; color: var(--text-primary); background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; font-size: 14px; }
+.scope { display: flex; align-items: flex-start; gap: 10px; padding: 16px; border-radius: 10px; background: var(--bg-secondary); color: var(--text-muted); font-size: 12px; line-height: 1.8; }
+.scope svg { margin-top: 3px; color: var(--text-secondary); }
+.existing { border-top: 1px solid var(--border-subtle); padding-top: 16px; color: var(--text-secondary); font-size: 13px; }
+.existing summary { cursor: pointer; padding-block: 8px; }
+.existing form { display: grid; gap: 14px; padding-top: 16px; }
+.endpoint { display: flex; align-items: center; gap: 12px; padding: 16px; border: 1px solid var(--border); border-radius: 10px; min-width: 0; }
+.endpoint > svg { color: var(--accent-primary); }
+.endpoint > div { min-width: 0; flex: 1; display: grid; gap: 6px; }
+.endpoint span { color: var(--text-muted); font-size: 11px; }
+.endpoint code { overflow-wrap: anywhere; color: var(--text-primary); font-size: 13px; }
+.endpoint button { display: grid; place-items: center; width: 40px; height: 40px; background: transparent; color: var(--text-secondary); flex-shrink: 0; }
+.codePanel { min-width: 0; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+.codeHeading { display: flex; gap: 12px; justify-content: space-between; align-items: center; flex-wrap: wrap; padding: 10px 18px; border-bottom: 1px solid var(--border); color: var(--text-muted); font-size: 12px; min-height: 48px; }
+.codeHeading button { min-height: 32px; font-size: 11px; }
+.codePanel pre { padding: 20px; margin: 0; max-height: 300px; overflow: auto; font-size: 12px; line-height: 1.8; color: var(--text-secondary); white-space: pre; }
+.copyButton { margin: 0 18px 18px; padding: 8px 14px; color: var(--text-primary); background: var(--bg-elevated); border: 1px solid var(--border); }
+.check { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.check > div { flex: 1; min-width: 180px; }
+.check h4 { font-size: 14px; font-weight: 500; }
+.check p { font-size: 12px; color: var(--text-muted); line-height: 1.8; margin-top: 8px; }
+.success, .error { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.8; }
+.success { color: var(--success); }
+.error { color: var(--accent-primary); }
+.success svg, .error svg { margin-top: 4px; }
+.keys { padding: 24px 28px; border-top: 1px solid var(--border-subtle); display: grid; gap: 16px; }
+.keys h3 span { color: var(--text-muted); font-size: 12px; font-weight: 400; margin-left: 8px; }
+.keyRow { display: flex; align-items: center; gap: 12px; padding: 16px 0; border-top: 1px solid var(--border-subtle); flex-wrap: wrap; }
+.keyRow > div:not(.revokeActions) { flex: 1; min-width: 140px; }
+.keyRow strong { font-size: 13px; font-weight: 500; }
+.keyRow p { color: var(--text-muted); font-size: 11px; margin-top: 6px; line-height: 1.7; }
+.keyIcon { width: 36px; height: 36px; border-radius: 9px; background: var(--bg-elevated); display: grid; place-items: center; color: var(--text-muted); }
+.revokeActions { display: flex; gap: 16px; align-items: center; }
+.dangerButton { color: var(--accent-primary); background: var(--surface-pink); padding: 8px 12px; }
+.srOnly { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+@media(max-width: 600px) {
+  .header, .body, .keys { padding: 20px; }
+  .header { align-items: flex-start; }
+  .header h2 { font-size: 20px; }
+  .emblem, .transport { display: none; }
+  .steps { gap: 6px; padding: 12px 16px; }
+  .steps > button { font-size: 11px; flex-direction: column; justify-content: flex-start; text-align: center; gap: 6px; }
+  .steps > button > svg { display: none; }
+  .clients { grid-template-columns: 1fr; }
+  .clients > button { padding: 18px; display: grid; grid-template-columns: 26px 1fr; gap: 8px 14px; }
+  .clients > button > svg:first-child { grid-row: 1 / 3; align-self: center; }
+  .clients > button > span { grid-column: 2; }
+  .keyForm, .keyForm label { width: 100%; }
+  .keyForm > button { width: 100%; }
+  .card input { font-size: 16px; }
+  .codePanel pre { font-size: 11px; }
+}

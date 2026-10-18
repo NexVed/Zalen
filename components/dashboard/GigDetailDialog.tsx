@@ -9,6 +9,7 @@
  * - All proposals (with accept / reject) for the gig author
  */
 import { useState } from "react";
+import * as Dialog from "@radix-ui/react-dialog";
 import * as stylex from "@stylexjs/stylex";
 import {
   X,
@@ -19,12 +20,15 @@ import {
   DollarSign,
   Clock,
 } from "lucide-react";
-import { useMutation, useQuery } from "convex/react";
+import { useMutation } from "convex/react";
+import { useLiveQuery } from "@/lib/use-live-query";
+import { ServiceState } from "./ServiceState";
 import { api } from "@/convex/_generated/api";
 import type { Id } from "@/convex/_generated/dataModel";
 import type { Gig } from "./Gigs";
 import { CATEGORY_LABELS } from "./Gigs";
 import { ui } from "./ui";
+import { BoardDialog } from "./BoardDialog";
 import styles from "./Hub.module.css";
 import gigStyles from "./Gigs.module.css";
 
@@ -69,36 +73,24 @@ export function GigDetailDialog({
   const canApply =
     signedIn && !isAuthor && !gig.myProposalId && gig.status === "open";
 
-  const proposals = useQuery(api.gigs.listProposals, {
+  const { data: proposals, error: loadError, retry } = useLiveQuery(api.gigs.listProposals, {
     gigId: gig._id,
-  }) as Proposal[] | undefined;
+  });
 
   // The current user's own proposal (if any) from the list
   const myProposal = proposals?.find((p) => p.isMine);
 
   return (
-    <div
-      className={styles.overlay}
-      style={{ display: "flex", alignItems: "center", justifyContent: "center" }}
-      onClick={onClose}
-    >
-      <div
-        className={styles.dialog}
-        style={{ maxWidth: 720 }}
-        onClick={(e) => e.stopPropagation()}
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="gig-detail-title"
-      >
+    <BoardDialog title={gig.title} onClose={onClose} maxWidth={720}>
+        {loadError && <ServiceState title="Applications" onRetry={retry} />}
         {/* Header */}
         <div className={styles.dialogHeading}>
-          <h2
+          <Dialog.Title
             className={styles.dialogTitle}
-            id="gig-detail-title"
             style={{ fontSize: 22, wordBreak: "break-word" }}
           >
             {gig.title}
-          </h2>
+          </Dialog.Title>
           <button
             {...stylex.props(ui.iconButton)}
             aria-label="Close"
@@ -221,8 +213,7 @@ export function GigDetailDialog({
             </p>
           )}
         </div>
-      </div>
-    </div>
+    </BoardDialog>
   );
 }
 

@@ -12,6 +12,10 @@ type Config struct {
 	Env                string
 	Port               string
 	ClerkJWTIssuer     string
+	ConvexURL          string
+	ConvexDeployKey    string
+	PublicURL          string
+	WebURL             string
 	CORSAllowedOrigins []string
 	ReadTimeout        time.Duration
 	WriteTimeout       time.Duration
@@ -24,6 +28,10 @@ func Load() Config {
 		Env:                getEnv("APP_ENV", "development"),
 		Port:               getEnv("PORT", "8080"),
 		ClerkJWTIssuer:     getEnv("CLERK_JWT_ISSUER_DOMAIN", ""),
+		ConvexURL:          firstEnv("CONVEX_URL", "NEXT_PUBLIC_CONVEX_URL"),
+		ConvexDeployKey:    getEnv("CONVEX_DEPLOY_KEY", ""),
+		PublicURL:          getEnv("PUBLIC_API_URL", "http://127.0.0.1:"+getEnv("PORT", "8080")),
+		WebURL:             getEnv("WEB_URL", "http://127.0.0.1:3000"),
 		CORSAllowedOrigins: splitAndTrim(getEnv("CORS_ALLOWED_ORIGINS", "http://localhost:3000")),
 		ReadTimeout:        10 * time.Second,
 		WriteTimeout:       15 * time.Second,
@@ -41,6 +49,15 @@ func getEnv(key, fallback string) string {
 		return v
 	}
 	return fallback
+}
+
+func firstEnv(keys ...string) string {
+	for _, key := range keys {
+		if v, ok := os.LookupEnv(key); ok && v != "" {
+			return v
+		}
+	}
+	return ""
 }
 
 func splitAndTrim(value string) []string {

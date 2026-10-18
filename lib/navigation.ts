@@ -6,16 +6,14 @@ export const navigation = [
   { name: "Investors", path: "/investors", description: "Browse investor profiles by funding stage and sector." },
   { name: "B2B", path: "/b2b", description: "Find service providers and business partnership requests." },
   { name: "Gigs", path: "/gigs", description: "Browse paid freelance projects by budget and skill." },
-  { name: "Events", path: "/events", description: "Browse meetups, workshops, and upcoming events." },
-  { name: "My workspace", path: "/workspace", description: "Manage applications and portfolio projects." },
+  { name: "Community", path: "/community", description: "Share projects with text, images, and video so your work can be seen." },
 ] as const;
 
 export type HubView = "Freelancers" | "Forum" | "Investors" | "B2B";
-export type View = typeof navigation[number]["name"] | "Opportunities" | "Community" | "Profile";
+export type View = typeof navigation[number]["name"] | "Opportunities" | "Profile";
 const aliases = [
   { name: "Profile" as const, path: "/profile", description: "Manage your profile, skills, and work." },
   { name: "Opportunities" as const, path: "/opportunities", description: "Explore all startup opportunities." },
-  { name: "Community" as const, path: "/community", description: "Meet other builders and find your next event." },
 ];
 export const pages = [...navigation, ...aliases];
 export function pageFor(view: View) { return pages.find(page => page.name === view)!; }

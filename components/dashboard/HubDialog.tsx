@@ -26,7 +26,6 @@ export function HubDialog({
   state,
   update,
   name,
-  userId,
   currentUserId,
   signedIn,
   onSignIn,
@@ -67,6 +66,7 @@ export function HubDialog({
       <Dialog.Portal>
         <Dialog.Overlay className={styles.overlay} />
         <Dialog.Content className={styles.dialog}>
+          <div className={styles.dialogScroll}>
           <div className={styles.dialogHeading}>
             <Dialog.Title className={styles.dialogTitle}>{title}</Dialog.Title>
             <Dialog.Close {...stylex.props(ui.iconButton)} aria-label="Close dialog">
@@ -144,6 +144,7 @@ export function HubDialog({
               onClose={onClose}
             />
           )}
+          </div>
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>
@@ -157,7 +158,6 @@ export function HubDialog({
 function ThreadView({
   post: initialPost,
   currentUserId,
-  name,
   signedIn,
   onSignIn,
   onClose,
@@ -241,7 +241,7 @@ function ThreadView({
           linkTitle: post.linkTitle ?? "",
         }}
         onClose={() => setEditingPost(false)}
-        onSave={async ({ title, category, body, imageStorageIds, linkUrl, linkTitle }) => {
+        onSave={async ({ title, body, imageStorageIds, linkUrl, linkTitle }) => {
           await doEditPost({
             postId: post._id,
             title,

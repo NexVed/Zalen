@@ -2,6 +2,8 @@
 .menuTrigger { display: none; }
 .close { display: flex; }
 .desktopAction { display: contents; }
+.connectLink { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 8px 10px; border: 1px solid var(--border); border-radius: 8px; color: var(--text-secondary); font-size: 11px; white-space: nowrap; }
+.connectLink:hover { color: var(--accent-primary); border-color: var(--accent-primary); }
 .accountLoading { color: var(--text-muted); font-size: 11px; }
 .overlay { position: fixed; inset: 0; z-index: 60; background: var(--overlay); backdrop-filter: blur(4px); }
 .drawer { position: fixed; inset: 0 0 0 auto; z-index: 61; width: min(360px, 100%); height: 100dvh; overflow-y: auto; overscroll-behavior: contain; padding: max(20px, env(safe-area-inset-top)) 20px max(24px, env(safe-area-inset-bottom)); background: var(--bg-card); border-left: 1px solid var(--border); display: flex; flex-direction: column; gap: 24px; }

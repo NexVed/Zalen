@@ -1,68 +1,67 @@
 "use client";
+import { useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
-import * as stylex from "@stylexjs/stylex";
-import { ArrowRight, ArrowUpRight, BriefcaseBusiness, Compass, Bookmark, FolderCheck, Check, Plus } from "lucide-react";
-import { colors } from "@/styles/tokens.stylex";
-import { ui } from "./ui";
-import type { DemoState } from "@/lib/demo-data";
+import { ArrowRight, ArrowUpRight, Bookmark, BriefcaseBusiness, Check, FolderCheck, MapPin, MessageCircle, Trophy, Zap } from "lucide-react";
+import { useAccountProfile } from "@/components/SyncUser";
+import type { DemoState, Opportunity } from "@/lib/demo-data";
+import styles from "./Overview.module.css";
 
-export function Overview({ state, total, onExplore, onProfile, onWorkspace }: { state: DemoState; total: number; onExplore: () => void; onProfile: () => void; onWorkspace: () => void }) {
-  const completion = Math.round(Object.values(state.profile).filter(value => value.trim()).length / 4 * 100);
-  const complete = completion === 100;
-  return <>
-    <section {...stylex.props(s.heroGrid)} aria-label="Your launchpad">
-      <div {...stylex.props(s.hero)}>
-        <div {...stylex.props(s.heroContent)}>
-          <h2 {...stylex.props(s.heroTitle)}>Startup challenges.<br />Freelance projects.</h2>
-          <p {...stylex.props(s.heroBody)}>Browse briefs, review deliverables, and apply for projects that match your skills.</p>
-          <button {...stylex.props(ui.primary, s.heroButton)} onClick={onExplore}>Explore opportunities <ArrowUpRight size={16} /></button>
-        </div>
-        <div {...stylex.props(s.art)}><Image src="/brand/zalen-crystal.png" alt="Zalen's crystalline Z surrounded by glowing pink and gold orbital rings" fill sizes="(max-width: 700px) 300px, 500px" preload {...stylex.props(s.artImage)} /></div>
-      </div>
-      <div {...stylex.props(ui.card, s.profile)}>
-        <div {...stylex.props(ui.between)}><span {...stylex.props(ui.pill, ui.pink)}> PROFILE</span><ArrowUpRight size={17} {...stylex.props(ui.muted)} /></div>
-        <div {...stylex.props(s.profileMiddle)}><div><h2 {...stylex.props(s.profileTitle)}>Complete your profile</h2><p {...stylex.props(s.profileText)}>Add your skills and portfolio link.</p></div><div {...stylex.props(s.ring)}><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="43" fill="none" stroke="var(--border)" strokeWidth="5" /><circle cx="50" cy="50" r="43" fill="none" stroke="var(--accent-primary)" strokeWidth="5" strokeDasharray={`${completion / 100 * 270} 270`} strokeLinecap="round" transform="rotate(-90 50 50)" /></svg><span {...stylex.props(s.ringValue)}>{completion}<small>%</small></span></div></div>
-        <div {...stylex.props(s.profileBottom)}><span {...stylex.props(ui.row, ui.caption)}>{state.profile.skills ? <><Check size={12} {...stylex.props(s.check)} /> Skills added</> : "Add your skills to get started"}</span><button {...stylex.props(ui.textButton, s.profileLink)} onClick={onProfile}>{complete ? "Edit profile" : "Complete profile"}<ArrowRight size={14} /></button></div>
-      </div>
+const destinations = [
+  { href: "/bounties", title: "Startup bounties", text: "Solve a challenge. Review the brief and reward.", icon: Trophy },
+  { href: "/gigs", title: "Freelance gigs", text: "Find paid projects and submit a proposal.", icon: Zap },
+  { href: "/freelancers", title: "Local businesses", text: "Explore the map and prepare a service pitch.", icon: MapPin },
+  { href: "/community", title: "Community", text: "Share your work and see what others are building.", icon: MessageCircle },
+];
+
+export function Overview({ state, items, signedIn, onProfile, onOpen, onSave, onRemoveApplication }: {
+  state: DemoState; items: Opportunity[]; signedIn: boolean;
+  onProfile: () => void; onOpen: (item: Opportunity) => void; onSave: (id: string) => void; onRemoveApplication: (id: string) => void;
+}) {
+  const { bundle, status } = useAccountProfile();
+  const [tab, setTab] = useState<"Saved" | "Applications" | "Projects">("Saved");
+  const checks = [
+    { label: "About you", done: Boolean(bundle?.profile?.bio?.trim()) },
+    { label: "Skills", done: Boolean(bundle?.skills.length) },
+    { label: "Portfolio", done: Boolean(bundle?.projects.length) },
+  ];
+  const completion = Math.round(checks.filter(item => item.done).length / checks.length * 100);
+  const complete = bundle?.onboarding?.completed;
+  const stats = [
+    { label: "Saved listings", value: state.saved.length, tab: "Saved" as const, icon: Bookmark },
+    { label: "Local applications", value: state.applications.length, tab: "Applications" as const, icon: BriefcaseBusiness },
+    { label: "Portfolio projects", value: state.portfolio.length, tab: "Projects" as const, icon: FolderCheck },
+  ];
+  const saved = items.filter(item => state.saved.includes(item.id));
+  const empty = tab === "Saved" ? !saved.length : tab === "Applications" ? !state.applications.length : !state.portfolio.length;
+  return <div className={styles.page}>
+    <section className={styles.hero} aria-labelledby="overview-banner-title">
+      <div className={styles.heroContent}><h2 id="overview-banner-title">Startup challenges.<br />Freelance projects.</h2><p>Browse briefs, review deliverables, and apply for projects that match your skills.</p><Link href="/bounties">Explore opportunities <ArrowUpRight size={16} /></Link></div>
+      <div className={styles.heroArt}><Image src="/brand/zalen-crystal.png" alt="" fill sizes="(max-width: 700px) 320px, (max-width: 1200px) 550px, 720px" preload /></div>
     </section>
-    <section {...stylex.props(s.stats)} aria-label="Your activity at a glance">
-      <button {...stylex.props(ui.card, s.stat)} onClick={onExplore}><div {...stylex.props(ui.between)}><span {...stylex.props(s.statLabel)}>Explore opportunities</span><Compass size={16} {...stylex.props(s.pinkIcon)} /></div><div {...stylex.props(ui.between)}><span {...stylex.props(s.statValue)}>{String(total).padStart(2, "0")}</span><span {...stylex.props(ui.pill, ui.green)}> Open the board</span></div><span {...stylex.props(s.statFoot)}>View available listings <ArrowUpRight size={12} /></span></button>
-      <button {...stylex.props(ui.card, s.stat)} onClick={onWorkspace}><div {...stylex.props(ui.between)}><span {...stylex.props(s.statLabel)}>Active applications</span><BriefcaseBusiness size={16} {...stylex.props(s.orangeIcon)} /></div><div {...stylex.props(ui.between)}><span {...stylex.props(s.statValue)}>{String(state.applications.length).padStart(2, "0")}</span><div {...stylex.props(s.stageDots)}><i /><i /><i /></div></div><span {...stylex.props(s.statFoot)}><span {...stylex.props(s.highlight)}>{state.applications.filter(a => a.status === "Shortlisted").length} shortlisted</span> {state.applications.length ? "View application status" : "No applications yet"}</span></button>
-      <button {...stylex.props(ui.card, s.stat)} onClick={onWorkspace}><div {...stylex.props(ui.between)}><span {...stylex.props(s.statLabel)}>Portfolio projects</span><FolderCheck size={16} {...stylex.props(s.purpleIcon)} /></div><div {...stylex.props(ui.between)}><span {...stylex.props(s.statValue)}>{String(state.portfolio.length).padStart(2, "0")}</span><span {...stylex.props(ui.row, s.projectTiles)}>{state.portfolio.slice(0, 2).map(p => <span key={p.id}>{p.title[0]}</span>)}<Plus size={12} /></span></div><span {...stylex.props(s.statFoot)}>Manage your portfolio <ArrowUpRight size={12} /></span></button>
-      <button {...stylex.props(ui.card, s.stat)} onClick={onWorkspace}><div {...stylex.props(ui.between)}><span {...stylex.props(s.statLabel)}>Saved opportunities</span><Bookmark size={16} {...stylex.props(s.blueIcon)} /></div><span {...stylex.props(s.statValue)}>{String(state.saved.length).padStart(2, "0")}</span><span {...stylex.props(s.statFoot)}>{state.saved.length ? "View saved opportunities" : "Save opportunities to review later"}</span></button>
+    <section className={styles.start} aria-label="Explore Zalen">
+      <div className={styles.paths}>
+        <div className={styles.sectionHeading}><h2>Find your next project</h2><span>Choose where to start</span></div>
+        <div className={styles.destinations}>{destinations.map(({ href, title, text, icon: Icon }) => <Link href={href} key={href} className={styles.destination}><Icon size={21} /><div><h3>{title}</h3><p>{text}</p></div><ArrowUpRight size={17} /></Link>)}</div>
+      </div>
+      <aside className={styles.profile} aria-label="Your profile">
+        <span className={styles.kicker}>Your profile</span>
+        <h2>{!signedIn ? "Introduce yourself" : complete ? "Keep your work up to date" : "Finish setting up"}</h2>
+        <p>{!signedIn ? "Add your skills and project examples to get started." : status === "error" ? "Your profile is temporarily unavailable. You can retry from your profile page." : "A short bio, relevant skills, and work samples help explain what you do."}</p>
+        {signedIn && bundle && <><div className={styles.progressLabel}><span>Profile essentials</span><strong>{completion}%</strong></div><progress max={100} value={completion} aria-label="Profile essentials completion" /><div className={styles.checks}>{checks.map(item => <span key={item.label}>{item.done ? <Check size={13} /> : <span className={styles.unchecked} />}{item.label}</span>)}</div></>}
+        <button onClick={onProfile}>{!signedIn ? "Sign in to set up" : complete ? "View my profile" : "Complete profile"}<ArrowRight size={16} /></button>
+      </aside>
     </section>
-  </>;
+    <section className={styles.stats} aria-label="Your activity at a glance">{stats.map(({ label, value, tab: nextTab, icon: Icon }) => <button key={label} className={styles.stat} onClick={() => { setTab(nextTab); document.getElementById("dashboard-activity")?.scrollIntoView({ behavior: "smooth", block: "nearest" }); }}><div><Icon size={18} /><span>{label}</span><ArrowUpRight size={15} /></div><strong>{String(value).padStart(2, "0")}</strong></button>)}</section>
+    <section id="dashboard-activity" className={styles.activity} aria-labelledby="activity-heading">
+      <div className={styles.sectionHeading}><h2 id="activity-heading">Your activity</h2><Link href="/opportunities">Sample opportunity board <ArrowUpRight size={14} /></Link></div>
+      <div role="group" aria-label="Activity views" className={styles.tabs}>{(["Saved", "Applications", "Projects"] as const).map(value => <button key={value} aria-pressed={tab === value} onClick={() => setTab(value)}>{value}</button>)}</div>
+      {tab !== "Projects" && <p className={styles.note}>Sample opportunity activity is saved on this device. Applications here are local records and are not sent to a company.</p>}
+      {empty ? <div className={styles.empty}><Bookmark size={25} /><h3>{tab === "Saved" ? "No saved listings yet" : tab === "Applications" ? "No application records yet" : "No portfolio projects yet"}</h3><p>{tab === "Projects" ? "Add a project to show your experience and the work you can deliver." : "Browse opportunities to read a brief, save it, or prepare an application."}</p>{tab === "Projects" ? <button onClick={onProfile}>Add your work <ArrowRight size={15} /></button> : <Link href="/opportunities">Browse sample opportunities <ArrowRight size={15} /></Link>}</div> : <div className={styles.rows}>
+        {tab === "Saved" && saved.map(item => <article key={item.id} className={styles.row}><div><span>{item.company} · {item.category}</span><h3>{item.title}</h3><p>{item.amount} · {item.remote ? "Remote" : item.location}</p></div><div className={styles.rowActions}><button onClick={() => onOpen(item)}>Review <ArrowUpRight size={14} /></button><button aria-label={`Unsave ${item.title}`} onClick={() => onSave(item.id)}><Bookmark size={17} fill="currentColor" /></button></div></article>)}
+        {tab === "Applications" && state.applications.map(application => { const item = items.find(item => item.id === application.opportunityId); return <article key={application.opportunityId} className={styles.row}><div><span>Local record · {application.status}</span><h3>{item?.title ?? "Opportunity no longer available"}</h3><p>{item?.company ?? ""}</p></div><div className={styles.rowActions}>{item && <button onClick={() => onOpen(item)}>View record <ArrowUpRight size={14} /></button>}<button onClick={() => onRemoveApplication(application.opportunityId)}>Remove local record</button></div></article>; })}
+        {tab === "Projects" && state.portfolio.map(project => <article key={project.id} className={styles.row}><div><span>{project.type}</span><h3>{project.title}</h3></div><button onClick={onProfile}>View in profile <ArrowUpRight size={14} /></button></article>)}
+      </div>}
+    </section>
+  </div>;
 }
-const s = stylex.create({
-  heroGrid: { display: "grid", gridTemplateColumns: { default: "1.85fr 1fr", "@media (max-width: 1000px)": "1fr" }, gap: 20, marginBottom: 20 },
-  hero: { position: "relative", overflow: "hidden", borderRadius: 18, minHeight: 260, backgroundColor: "var(--hero-bg)", backgroundImage: "radial-gradient(ellipse at 90% 70%, var(--hero-wash), transparent 65%)", border: "1px solid", borderColor: colors.border },
-  heroContent: { position: "relative", zIndex: 2, padding: { default: "28px 32px", "@media (max-width: 700px)": "26px 22px" } },
-  eyebrow: { display: "flex", alignItems: "center", gap: 7, fontSize: 9, fontWeight: 600, letterSpacing: "1.5px", color: colors.body },
-  star: { color: colors.pink, display: "inline-flex" },
-  heroTitle: { fontFamily: "var(--font-display)", fontSize: { default: 36, "@media (max-width: 700px)": 30 }, lineHeight: 1.12, letterSpacing: "-1.4px", fontWeight: 600, marginTop: 14 },
-  gradientText: { backgroundImage: "linear-gradient(90deg, var(--accent-secondary), var(--accent-warm))", backgroundClip: "text", color: "transparent" },
-  heroBody: { color: colors.body, fontSize: { default: 11, "@media (max-width: 700px)": 14 }, lineHeight: 1.8, marginTop: 12 },
-  heroButton: { marginTop: 18, minHeight: 38, fontSize: 11, padding: "9px 15px" },
-  art: { position: "absolute", right: { default: -32, "@media (max-width: 700px)": -85 }, top: -6, width: "51%", height: "104%", maskImage: "linear-gradient(to right, transparent, black 28%, black 78%, transparent)", opacity: { default: 0.9, "@media (max-width: 700px)": 0.4 } },
-  artImage: { objectFit: "cover", objectPosition: "center", maskImage: "linear-gradient(to bottom, transparent, black 14%, black 80%, transparent)" },
-  artCaption: { position: "absolute", right: 30, bottom: 20, fontSize: 7, letterSpacing: "2px", color: colors.muted, display: { default: "block", "@media (max-width: 700px)": "none" } },
-  profile: { padding: 24, display: "flex", flexDirection: "column", justifyContent: "space-between", backgroundImage: "radial-gradient(ellipse at 100% 0%, var(--hero-wash), transparent 70%)" },
-  profileMiddle: { display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 12, marginBlock: 21 },
-  profileTitle: { fontFamily: "var(--font-display)", fontSize: 22, letterSpacing: "-0.6px", lineHeight: 1.35, fontWeight: 500 },
-  profileText: { color: colors.muted, fontSize: { default: 11, "@media (max-width: 700px)": 13 }, lineHeight: 1.7, marginTop: 10 },
-  ring: { position: "relative", width: 88, height: 88, flexShrink: 0 },
-  ringValue: { position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "var(--font-display)", fontSize: 26, fontWeight: 500, gap: 1 },
-  profileBottom: { display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, borderTop: "1px solid", borderColor: colors.subtleBorder, paddingTop: 15, flexWrap: "wrap" },
-  profileLink: { color: colors.primary, fontSize: 11 },
-  check: { color: colors.green },
-  stats: { display: "grid", gridTemplateColumns: { default: "repeat(4, minmax(0, 1fr))", "@media (max-width: 900px)": "repeat(2, minmax(0, 1fr))", "@media (max-width: 400px)": "1fr" }, gap: 16, marginBottom: 32 },
-  stat: { padding: "19px 22px", textAlign: "left", color: colors.foreground, display: "flex", flexDirection: "column", gap: 12, transition: "border-color 150ms", borderColor: { default: colors.subtleBorder, ":hover": colors.border } },
-  statLabel: { fontSize: 11, color: colors.body },
-  statValue: { fontFamily: "var(--font-display)", fontSize: 32, lineHeight: 1, fontWeight: 500, letterSpacing: "-1px" },
-  statFoot: { display: "flex", alignItems: "center", gap: 6, color: colors.muted, fontSize: 9, minHeight: 14, flexWrap: "wrap" },
-  pinkIcon: { color: colors.pink }, orangeIcon: { color: colors.warm }, purpleIcon: { color: colors.purple }, blueIcon: { color: colors.blue },
-  highlight: { color: colors.green },
-  chart: { width: 110, height: 44, minWidth: 0 },
-  projectTiles: { color: colors.purple, fontFamily: "var(--font-display)", gap: 12, backgroundColor: colors.softPurple, borderRadius: 6, padding: "6px 10px", fontSize: 13 },
-  stageDots: { display: "flex", gap: 5, height: 7, width: 72, borderRadius: 4, backgroundImage: "linear-gradient(to right, var(--accent-primary) 35%, var(--accent-warm) 35%, var(--accent-warm) 65%, var(--border) 65%)" },
-});

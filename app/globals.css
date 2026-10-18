@@ -42,6 +42,18 @@ button, a, input, select, textarea { outline-offset: 4px; }
 input::placeholder, textarea::placeholder { color: var(--text-muted); }
 select { cursor: pointer; }
 svg { flex-shrink: 0; }
+/* Shared by the page and every nested scrolling surface. */
+*::-webkit-scrollbar { width: 9px; height: 9px; }
+*::-webkit-scrollbar-track, *::-webkit-scrollbar-corner { background: transparent; }
+*::-webkit-scrollbar-thumb { min-height: 32px; border: 2px solid transparent; border-radius: 999px; background: linear-gradient(180deg, var(--accent-secondary), var(--accent-primary) 55%, var(--accent-warm)) padding-box; }
+*::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, var(--accent-primary), var(--accent-warm)) padding-box; }
+@supports not selector(::-webkit-scrollbar) {
+  * { scrollbar-width: thin; scrollbar-color: var(--accent-primary) transparent; }
+}
+@media (forced-colors: active) {
+  * { scrollbar-color: auto; }
+  *::-webkit-scrollbar-thumb { background: CanvasText; }
+}
 .skip-link { position: fixed; top: -60px; left: 16px; z-index: 100; padding: 12px 20px; background: var(--accent-primary); color: var(--on-accent); border-radius: 12px; }
 .skip-link:focus { top: 12px; }
 .theme-sun { display: none; }

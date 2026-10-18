@@ -15,7 +15,9 @@ import (
 
 func main() {
 	// Load a local .env when present (ignored in production/containers).
-	_ = godotenv.Load()
+	for _, name := range []string{".env", "../.env.local", ".env.local"} {
+		_ = godotenv.Load(name)
+	}
 
 	cfg := config.Load()
 

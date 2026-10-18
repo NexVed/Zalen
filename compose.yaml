@@ -1,0 +1,32 @@
+services:
+  web:
+    build:
+      context: .
+      args:
+        NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY:?Set the public Clerk key}
+        NEXT_PUBLIC_CONVEX_URL: ${NEXT_PUBLIC_CONVEX_URL:?Set the Convex URL}
+        NEXT_PUBLIC_MCP_URL: http://localhost:8080/mcp
+    env_file: .env.local
+    environment:
+      PORT: "3000"
+      HOSTNAME: 0.0.0.0
+      NEXT_PUBLIC_MCP_URL: http://localhost:8080/mcp
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+  api:
+    build:
+      context: ./server
+    env_file: ./server/.env
+    environment:
+      PORT: "8080"
+      APP_ENV: production
+      PUBLIC_API_URL: http://localhost:8080
+      WEB_URL: http://web:3000
+      CORS_ALLOWED_ORIGINS: http://localhost:3000,http://127.0.0.1:3000
+    ports:
+      - "8080:8080"
+    depends_on:
+      web:
+        condition: service_healthy
+    restart: unless-stopped

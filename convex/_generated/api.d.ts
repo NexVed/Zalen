@@ -9,9 +9,14 @@
  */
 
 import type * as bounties from "../bounties.js";
+import type * as catalog from "../catalog.js";
+import type * as community from "../community.js";
+import type * as demoSeedData from "../demoSeedData.js";
 import type * as forum from "../forum.js";
 import type * as gigs from "../gigs.js";
+import type * as mcp from "../mcp.js";
 import type * as profile from "../profile.js";
+import type * as seed from "../seed.js";
 import type * as storage from "../storage.js";
 import type * as tasks from "../tasks.js";
 import type * as users from "../users.js";
@@ -24,9 +29,14 @@ import type {
 
 declare const fullApi: ApiFromModules<{
   bounties: typeof bounties;
+  catalog: typeof catalog;
+  community: typeof community;
+  demoSeedData: typeof demoSeedData;
   forum: typeof forum;
   gigs: typeof gigs;
+  mcp: typeof mcp;
   profile: typeof profile;
+  seed: typeof seed;
   storage: typeof storage;
   tasks: typeof tasks;
   users: typeof users;

@@ -17,6 +17,8 @@ import { Bounties, type Bounty } from "./Bounties";
 import { BountyPostDialog, type BountyFormValues } from "./BountyPostDialog";
 import { BountyDetailDialog } from "./BountyDetailDialog";
 import { ui } from "./ui";
+import { useLiveQuery } from "@/lib/use-live-query";
+import { ServiceState } from "./ServiceState";
 import styles from "./Hub.module.css";
 
 // ---------------------------------------------------------------------------
@@ -72,10 +74,10 @@ export function BountiesPage({
   const currentUserId = (convexUser?._id ?? null) as Id<"users"> | null;
 
   // Fetch bounties
-  const rawBounties = useQuery(api.bounties.listBounties, {
+  const { data: rawBounties, error: loadError, retry } = useLiveQuery(api.bounties.listBounties, {
     type: typeFilter || undefined,
     status: statusFilter || undefined,
-  }) as (Bounty & { myVote: boolean; myApplicationId: Id<"bountyApplications"> | null })[] | undefined;
+  });
 
   // Mutations
   const createBounty = useMutation(api.bounties.createBounty);
@@ -143,6 +145,7 @@ export function BountiesPage({
             Post bugs, feature requests, code-review asks, and more. Browse open
             bounties and apply with your proposal or solution.
           </p>
+        </div>
           <button
             {...stylex.props(ui.primary)}
             onClick={() => requireAccount(() => setShowPost(true))}
@@ -150,7 +153,6 @@ export function BountiesPage({
             Post a bounty
             <ArrowUpRight size={15} />
           </button>
-        </div>
       </section>
 
       {/* Toast / status message */}
@@ -215,12 +217,13 @@ export function BountiesPage({
         ))}
       </div>
 
+      {(search || typeFilter || statusFilter !== "open") && <button className={styles.cardButton} onClick={() => { onSearch(""); setTypeFilter(""); setStatusFilter("open"); }}>Clear filters</button>}
       {/* Meta bar */}
       <div className={styles.meta}>
         <span>
-          {loading
+          {loadError ? "Could not load results" : loading
             ? "Loading bounties…"
-            : `${bounties.length} ${bounties.length === 1 ? "bounty" : "bounties"} · Powered by Convex`}
+            : `${bounties.length} ${bounties.length === 1 ? "bounty" : "bounties"}`}
         </span>
         {userId && (
           <button
@@ -235,10 +238,8 @@ export function BountiesPage({
 
       {/* Bounty list */}
       <section id="bounty-results" aria-label="Bounty results">
-        {loading ? (
-          <div className={styles.empty}>
-            <p>Loading bounties…</p>
-          </div>
+        {loadError ? <ServiceState title="Bounties" onRetry={retry} /> : loading ? (
+          <ServiceState title="Bounties" loading />
         ) : (
           <Bounties
             bounties={bounties}

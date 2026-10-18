@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import * as stylex from "@stylexjs/stylex";
-import { ArrowRight, ArrowUpRight, Bookmark, Check, CheckCheck, ChevronDown, Clock3, Globe2, Search, SlidersHorizontal, Users, X } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Bookmark, Check, ChevronDown, Clock3, Globe2, Search, SlidersHorizontal, Users, X } from "lucide-react";
 import { colors } from "@/styles/tokens.stylex";
 import { type Opportunity, type DemoState } from "@/lib/demo-data";
 import { ui, CompanyLogo } from "./ui";
@@ -33,7 +33,7 @@ export function Opportunities({ items, state, onSave, onApply, search, onSearch,
       <div {...stylex.props(s.list)}>
         <div {...stylex.props(ui.between, s.listHeading)}><span>{tab === "Saved" ? "Your shortlist" : "Available opportunities"}</span><span>{String(visible.length).padStart(2, "0")}</span></div>
         {visible.length ? visible.map(o => <button key={o.id} onClick={() => setSelectedId(o.id)} aria-pressed={selected?.id === o.id} {...stylex.props(s.item, selected?.id === o.id && s.itemSelected)}>
-          <div {...stylex.props(ui.row, s.companyRow)}><CompanyLogo tone={o.tone} small /><div {...stylex.props(s.itemCompany)}><span>{o.company}<CheckCheck size={12} {...stylex.props(ui.muted)} /></span><span {...stylex.props(ui.caption)}>{o.remote ? "Remote" : o.location} <span aria-hidden="true">·</span> {o.category}</span></div><ArrowUpRight size={13} {...stylex.props(ui.muted)} /></div>
+          <div {...stylex.props(ui.row, s.companyRow)}><CompanyLogo tone={o.tone} small /><div {...stylex.props(s.itemCompany)}><span>{o.company}</span><span {...stylex.props(ui.caption)}>{o.remote ? "Remote" : o.location} <span aria-hidden="true">·</span> {o.category}</span></div><ArrowUpRight size={13} {...stylex.props(ui.muted)} /></div>
           <h3 {...stylex.props(s.itemTitle)}>{o.title}</h3><div {...stylex.props(ui.between)}><span {...stylex.props(s.amount)}>{o.amount}<small {...stylex.props(s.amountNote)}>{o.category === "Challenge" ? " prize" : ""}</small></span><span {...stylex.props(s.match)}>{o.category}</span></div>
         </button>) : <div {...stylex.props(ui.empty)}><Search size={25} /><p>No opportunities found.</p><button {...stylex.props(ui.textButton)} onClick={() => { setType("All types"); setRemote(false); onSearch(""); onCity(""); setTab("For you"); }}>Clear filters <ArrowRight size={14} /></button></div>}
         {visible.length > 0 && <div {...stylex.props(s.listFooter)}><span {...stylex.props(s.footerDot)} /> Sample listings</div>}
@@ -46,7 +46,7 @@ export function Opportunities({ items, state, onSave, onApply, search, onSearch,
 function OpportunityDetail({ item, saved, applied, onSave, onApply }: { item: Opportunity; saved: boolean; applied: boolean; onSave: () => void; onApply: () => void }) {
   return <article {...stylex.props(s.detail)} aria-label={`${item.company} opportunity details`}>
     <div {...stylex.props(ui.between)}><span {...stylex.props(ui.pill, ui.green)}>Explore this opportunity</span><button {...stylex.props(s.save, saved && s.saveActive)} onClick={onSave} aria-label={saved ? "Unsave opportunity" : "Save opportunity"} aria-pressed={saved}><Bookmark size={17} fill={saved ? "currentColor" : "none"} /></button></div>
-    <div {...stylex.props(ui.row, s.detailCompany)}><CompanyLogo tone={item.tone} /><div><span {...stylex.props(s.companyName)}>{item.company}<CheckCheck size={13} {...stylex.props(s.verified)} /></span><span {...stylex.props(s.companySub)}>Early-stage startup <span aria-hidden="true">·</span> Demo organization</span></div></div>
+    <div {...stylex.props(ui.row, s.detailCompany)}><CompanyLogo tone={item.tone} /><div><span {...stylex.props(s.companyName)}>{item.company}</span><span {...stylex.props(s.companySub)}>Early-stage startup <span aria-hidden="true">·</span> Demo organization</span></div></div>
     <h3 {...stylex.props(s.detailTitle)}>{item.title}</h3>
     <div {...stylex.props(ui.row, ui.wrap, s.detailTags)}><span {...stylex.props(ui.pill, ui.pink)}>{item.category}</span><span {...stylex.props(ui.row, ui.caption)}><Globe2 size={11} />{item.remote ? "Remote friendly" : item.location}</span><span {...stylex.props(ui.row, ui.caption)}><Clock3 size={11} />{item.duration}</span></div>
     <p {...stylex.props(s.description)}>{item.description}</p>

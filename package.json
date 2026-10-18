@@ -16,7 +16,8 @@
     "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
   },
   "dependencies": {
     "@clerk/nextjs": "^7.9.17",
@@ -35,18 +36,21 @@
     "world-atlas": "^2.0.2"
   },
   "devDependencies": {
+    "@edge-runtime/vm": "^5.0.0",
     "@stylexjs/babel-plugin": "^0.19.1",
     "@stylexjs/postcss-plugin": "^0.19.1",
     "@tailwindcss/postcss": "^4.3.3",
-    "@types/node": "^20",
+    "@types/node": "^22.20.5",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "concurrently": "^10.0.6",
+    "convex-test": "^0.0.62",
     "eslint": "^9",
     "eslint-config-next": "16.4.2",
     "postcss": "^8.5.30",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^5.0.5"
   },
   "packageManager": "bun@1.4.2",
   "ignoreScripts": [

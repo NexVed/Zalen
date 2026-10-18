@@ -11,6 +11,7 @@
  *  - Accept / reject controls for the author on each pending application
  */
 import { useState } from "react";
+import * as Dialog from "@radix-ui/react-dialog";
 import * as stylex from "@stylexjs/stylex";
 import {
   X,
@@ -20,11 +21,14 @@ import {
   XCircle,
   Trophy,
 } from "lucide-react";
-import { useMutation, useQuery } from "convex/react";
+import { useMutation } from "convex/react";
+import { useLiveQuery } from "@/lib/use-live-query";
+import { ServiceState } from "./ServiceState";
 import { api } from "@/convex/_generated/api";
 import type { Id } from "@/convex/_generated/dataModel";
 import type { Bounty } from "./Bounties";
 import { ui } from "./ui";
+import { BoardDialog } from "./BoardDialog";
 import styles from "./Hub.module.css";
 import bountyStyles from "./Bounties.module.css";
 
@@ -68,34 +72,22 @@ export function BountyDetailDialog({
   const canApply =
     signedIn && !isAuthor && !bounty.myApplicationId && bounty.status === "open";
 
-  const applications = useQuery(
+  const { data: applications, error: loadError, retry } = useLiveQuery(
     api.bounties.listApplications,
     { bountyId: bounty._id },
-  ) as Application[] | undefined;
+  );
 
   return (
-    <div
-      className={styles.overlay}
-      style={{ display: "flex", alignItems: "center", justifyContent: "center" }}
-      onClick={onClose}
-    >
-      <div
-        className={styles.dialog}
-        style={{ maxWidth: 700 }}
-        onClick={(e) => e.stopPropagation()}
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="bounty-detail-title"
-      >
+    <BoardDialog title={bounty.title} onClose={onClose} maxWidth={700}>
+        {loadError && <ServiceState title="Applications" onRetry={retry} />}
         {/* Header */}
         <div className={styles.dialogHeading}>
-          <h2
+          <Dialog.Title
             className={styles.dialogTitle}
-            id="bounty-detail-title"
             style={{ fontSize: 22, wordBreak: "break-word" }}
           >
             {bounty.title}
-          </h2>
+          </Dialog.Title>
           <button
             {...stylex.props(ui.iconButton)}
             aria-label="Close"
@@ -201,8 +193,7 @@ export function BountyDetailDialog({
             </p>
           )}
         </div>
-      </div>
-    </div>
+    </BoardDialog>
   );
 }
 

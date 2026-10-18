@@ -2,6 +2,16 @@ import { defineSchema, defineTable } from "convex/server";
 import { v } from "convex/values";
 
 export default defineSchema({
+  sampleOpportunities: defineTable({
+    slug: v.string(), company: v.string(), title: v.string(), category: v.union(v.literal("Challenge"), v.literal("Paid project"), v.literal("Internship")),
+    location: v.string(), remote: v.boolean(), amount: v.string(), duration: v.string(), deadline: v.string(), skills: v.array(v.string()),
+    match: v.number(), tone: v.union(v.literal("pink"), v.literal("purple"), v.literal("orange"), v.literal("blue"), v.literal("green")),
+    description: v.string(), deliverables: v.array(v.string()), rubric: v.array(v.string()), applicants: v.number(),
+  }).index("by_slug", ["slug"]),
+  directoryEntries: defineTable({
+    slug: v.string(), kind: v.union(v.literal("investor"), v.literal("business")), name: v.string(), title: v.string(), location: v.string(),
+    tags: v.array(v.string()), description: v.string(), detail: v.string(), available: v.boolean(),
+  }).index("by_slug", ["slug"]).index("by_kind", ["kind"]),
   // ---------------------------------------------------------------------------
   // Core user mirror — synced from Clerk on sign-in (see users.ts / SyncUser)
   // ---------------------------------------------------------------------------
@@ -165,7 +175,8 @@ export default defineSchema({
     editedAt: v.optional(v.number()),
   })
     .index("by_category", ["category"])
-    .index("by_score", ["score"]),
+    .index("by_score", ["score"])
+    .index("by_author", ["authorId"]),
 
   /**
    * One vote per (user, post) pair.
@@ -329,4 +340,46 @@ export default defineSchema({
     .index("by_gig", ["gigId"])
     .index("by_applicant", ["applicantId"])
     .index("by_gig_applicant", ["gigId", "applicantId"]),
+
+  // ---------------------------------------------------------------------------
+  // Community feed — project posts with text, images, and video
+  // ---------------------------------------------------------------------------
+
+  communityPosts: defineTable({
+    authorId: v.id("users"),
+    authorName: v.string(),
+    body: v.string(),
+    media: v.array(v.object({
+      storageId: v.id("_storage"),
+      kind: v.union(v.literal("image"), v.literal("video")),
+    })),
+    likeCount: v.number(),
+    commentCount: v.number(),
+  }).index("by_author", ["authorId"]),
+
+  communityLikes: defineTable({
+    postId: v.id("communityPosts"),
+    userId: v.id("users"),
+  })
+    .index("by_post", ["postId"])
+    .index("by_user_post", ["userId", "postId"]),
+
+  communityComments: defineTable({
+    postId: v.id("communityPosts"),
+    authorId: v.id("users"),
+    authorName: v.string(),
+    body: v.string(),
+  }).index("by_post", ["postId"]),
+
+  // Personal access keys for the Go MCP server. Only a hash is stored.
+  mcpKeys: defineTable({
+    userId: v.id("users"),
+    clerkUserId: v.string(),
+    name: v.string(),
+    tokenHash: v.string(),
+    prefix: v.string(),
+    lastUsedAt: v.optional(v.number()),
+  })
+    .index("by_token_hash", ["tokenHash"])
+    .index("by_user", ["userId"]),
 });

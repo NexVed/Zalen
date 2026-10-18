@@ -14,6 +14,8 @@ import { Forum, type ForumPost } from "./Forum";
 import { HubDialog, type HubModal } from "./HubDialog";
 import { ForumPostDialog } from "./ForumPostDialog";
 import { ui } from "./ui";
+import { useLiveQuery } from "@/lib/use-live-query";
+import { ServiceState } from "./ServiceState";
 import styles from "./Hub.module.css";
 
 const content = {
@@ -69,7 +71,7 @@ export function HubPage({
   // Forum-specific Convex queries
   const forumCategory =
     view === "Forum" && filter !== "All" ? filter : undefined;
-  const forumPosts = useQuery(
+  const { data: forumPosts, error: forumError, retry } = useLiveQuery(
     api.forum.listPosts,
     view === "Forum" ? { category: forumCategory } : "skip",
   );
@@ -77,6 +79,8 @@ export function HubPage({
   // Mutation for creating a forum post (used by DiscussionForm replacement below)
   const createPost = useMutation(api.forum.createPost);
 
+  const { data: liveDirectory } = useLiveQuery(api.catalog.listDirectory, view === "Forum" ? "skip" : { kind: view === "Investors" ? "investor" : "business" });
+  const listedDirectory: DirectoryEntry[] = liveDirectory?.length ? liveDirectory.map(item => ({ ...item, id: item.slug })) : directory;
   const query = search.trim().toLowerCase();
 
   function requireAccount(action: () => void) {
@@ -94,7 +98,7 @@ export function HubPage({
     );
   }
 
-  const entries = [...state.listings, ...directory].filter(
+  const entries = [...state.listings, ...listedDirectory].filter(
     (entry) =>
       entry.kind === copy.kind &&
       (filter === "All" || entry.tags.includes(filter)) &&
@@ -136,6 +140,7 @@ export function HubPage({
         <div>
           <h2>{copy.title}</h2>
           <p>{copy.body}</p>
+        </div>
           <button
             {...stylex.props(ui.primary)}
             onClick={() => {
@@ -151,7 +156,6 @@ export function HubPage({
             {copy.action}
             <ArrowUpRight size={15} />
           </button>
-        </div>
       </section>
 
       {message && (
@@ -191,9 +195,9 @@ export function HubPage({
 
       <div className={styles.meta}>
         <span>
-          {forumLoading
+          {forumError ? "Could not load discussions" : forumLoading
             ? "Loading discussions…"
-            : `${count} ${filter === "My drafts" ? "saved drafts" : view === "Forum" ? "discussions" : "profiles"}${view === "Forum" ? " · Powered by Convex" : filter === "My drafts" ? " · Only visible in your local workspace" : " · Illustrative directory + your local listings"}`}
+            : `${count} ${filter === "My drafts" ? "saved drafts" : view === "Forum" ? "discussions" : "profiles"}${view === "Forum" ? "" : filter === "My drafts" ? " · Only visible in your local workspace" : " · Illustrative directory + your local listings"}`}
         </span>
         {view === "Forum" && userId && (
           <button
@@ -206,10 +210,8 @@ export function HubPage({
       </div>
 
       <section id="hub-results" aria-label={`${view} results`}>
-        {forumLoading ? (
-          <div className={styles.empty}>
-            <p>Loading discussions…</p>
-          </div>
+        {forumError ? <ServiceState title="Discussions" onRetry={retry} /> : forumLoading ? (
+          <ServiceState title="Discussions" loading />
         ) : !count && !forumLoading ? (
           <div className={styles.empty}>
             <Search size={28} />
@@ -241,7 +243,7 @@ export function HubPage({
                 <h3 className={styles.name}>{d.title}</h3>
                 <span className={styles.location}>For {d.recipient}</span>
                 <p className={styles.bodyText}>{d.body}</p>
-                <span className={styles.tag}>Saved locally · Not sent</span>
+                <span className={styles.tag}>Saved locally · Not sent</span><div className={styles.draftActions}><button className={styles.cardButton} onClick={async () => { try { await navigator.clipboard.writeText(`${d.title}\n\n${d.body}`); setMessage("Draft copied."); } catch { setMessage("Copy is unavailable. Select the draft text to copy it."); } }}>Copy draft</button><button className={styles.cardButton} onClick={() => update(current => ({ ...current, drafts: current.drafts.filter(item => item.id !== d.id) }))}>Delete draft</button></div>
               </article>
             ))}
           </div>
