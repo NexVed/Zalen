@@ -3,6 +3,10 @@
 </p>
 
 <p align="center">
+  <a href="https://zalen.vercel.app/" target="_blank"><strong>🚀 Live Demo</strong></a>
+</p>
+
+<p align="center">
   Full-stack boilerplate — <strong>Next.js 16</strong> · <strong>StyleX</strong> · <strong>Clerk</strong> · <strong>Convex</strong> · <strong>Go + Fiber</strong>
 </p>
 
@@ -261,4 +265,3 @@ go vet ./...
 bun run typecheck && bun run lint && bun run build   # front end
 cd server && go vet ./... && go test ./... -race     # Go API
 ```
-vvv
