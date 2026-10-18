@@ -19,7 +19,7 @@
 ## Architecture
 
 <p align="center">
-  <img src="Archify-Flowcharts/zalen.png" alt="Zalen architecture diagram" width="100%" />
+  <img src="Archify-Flowcharts/zalen---talent-to-opportunity-platform.jpeg" alt="Zalen architecture diagram" width="100%" />
 </p>
 
 | Layer | Owns |
