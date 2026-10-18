@@ -1,8 +1,39 @@
-# Zalen
+<p align="center">
+  <img src="public/brand/zalen-wordmark.png" alt="Zalen" height="64" />
+</p>
 
-Full-stack boilerplate: a **Next.js 16** front end (App Router, Cache Components),
-**StyleX** for styling, **Clerk** for auth, **Convex** for the data layer, and a
-**Go + Fiber** service API for backend business logic.
+<p align="center">
+  Full-stack boilerplate — <strong>Next.js 16</strong> · <strong>StyleX</strong> · <strong>Clerk</strong> · <strong>Convex</strong> · <strong>Go + Fiber</strong>
+</p>
+
+<p align="center">
+  <a href="#setup">Setup</a> ·
+  <a href="#architecture">Architecture</a> ·
+  <a href="#go-api">Go API</a> ·
+  <a href="#styling-with-stylex">Styling</a> ·
+  <a href="#commands-reference">Commands</a>
+</p>
+
+---
+
+## Architecture
+
+<p align="center">
+  <img src="Archify-Flowcharts/zalen.png" alt="Zalen architecture diagram" width="100%" />
+</p>
+
+| Layer | Owns |
+| --- | --- |
+| **Convex** | Database, realtime subscriptions, schema, auth-scoped queries/mutations |
+| **Clerk** | Authentication + session JWTs (shared by Convex and the Go API) |
+| **Go Fiber** | Service layer / business logic, external integrations, REST API |
+| **Next.js + StyleX** | UI, routing, server components, styling |
+
+Convex and the Go API both verify the **same Clerk session token**, so a signed-in user is authenticated everywhere.
+
+---
+
+## Project structure
 
 ```
 zalen/
@@ -24,33 +55,17 @@ zalen/
 └── postcss.config.js         StyleX + Tailwind PostCSS plugins
 ```
 
-## Responsibilities
-
-| Layer | Owns |
-| --- | --- |
-| **Convex** | Database, realtime subscriptions, schema, auth-scoped queries/mutations |
-| **Clerk** | Authentication + session JWTs (shared by Convex and the Go API) |
-| **Go Fiber** | Service layer / business logic, external integrations, REST API |
-| **Next.js + StyleX** | UI, routing, server components, styling |
-
-Convex and the Go API both verify the **same Clerk session token**, so a signed-in
-user is authenticated everywhere.
+---
 
 ## Authentication model
 
-Authentication is resolved **before** any route renders and **auth never blocks
-the route tree**:
+Auth is resolved **before** any route renders and **never blocks the route tree**:
 
-- `proxy.ts` runs `clerkMiddleware()` so the session is resolved once, up front,
-  for every request. It does **not** path-match and block routes
-  (`createRouteMatcher` is deprecated in Clerk Core 3).
-- Auth checks are **resource-based**: a page, layout, API route, or Server
-  Function that needs protection calls `await auth()` itself
-  (`@clerk/nextjs/server`). Public routes render immediately.
-- Interactive auth UI (sign-in/up buttons, user button) lives in the **client**
-  component `components/AuthButtons.tsx`, so `/` stays a fully static route with
-  no server-side `auth()` read — which also keeps Next's Instant Navigation
-  validation happy.
+- `proxy.ts` runs `clerkMiddleware()` so the session is resolved once, up front, for every request. It does **not** path-match and block routes (`createRouteMatcher` is deprecated in Clerk Core 3).
+- Auth checks are **resource-based**: a page, layout, API route, or Server Function that needs protection calls `await auth()` itself (`@clerk/nextjs/server`). Public routes render immediately.
+- Interactive auth UI (sign-in/up buttons, user button) lives in the **client** component `components/AuthButtons.tsx`, so `/` stays a fully static route with no server-side `auth()` read — which also keeps Next's Instant Navigation validation happy.
+
+---
 
 ## Prerequisites
 
@@ -59,6 +74,8 @@ the route tree**:
 - [CMake 3.20+](https://cmake.org) (optional — for the `CMakeLists.txt` build)
 - A [Clerk](https://clerk.com) application
 - A [Convex](https://convex.dev) account
+
+---
 
 ## Setup
 
@@ -76,9 +93,7 @@ cp .env.example .env.local          # front end
 cp server/.env.example server/.env  # Go API
 ```
 
-Fill in your Clerk keys. Create a Clerk **JWT template** named `convex`
-(Dashboard → JWT Templates) and copy its issuer URL into
-`CLERK_JWT_ISSUER_DOMAIN`.
+Fill in your Clerk keys. Create a Clerk **JWT template** named `convex` (Dashboard → JWT Templates) and copy its issuer URL into `CLERK_JWT_ISSUER_DOMAIN`.
 
 ### 3. Convex
 
@@ -86,8 +101,7 @@ Fill in your Clerk keys. Create a Clerk **JWT template** named `convex`
 bunx convex dev
 ```
 
-This logs you in, creates a deployment, writes `NEXT_PUBLIC_CONVEX_URL`, and
-regenerates `convex/_generated`. Make the Clerk issuer available to Convex:
+This logs you in, creates a deployment, writes `NEXT_PUBLIC_CONVEX_URL`, and regenerates `convex/_generated`. Then make the Clerk issuer available to Convex:
 
 ```bash
 bunx convex env set CLERK_JWT_ISSUER_DOMAIN https://your-app.clerk.accounts.dev
@@ -104,8 +118,10 @@ Or individually:
 ```bash
 bun run dev          # Next.js only            → http://localhost:3000
 bun run dev:convex   # Convex dev watcher
-bun run dev:api      # Go Fiber API           → http://localhost:8080
+bun run dev:api      # Go Fiber API            → http://localhost:8080
 ```
+
+---
 
 ## Go API
 
@@ -125,9 +141,7 @@ Routes (`server/internal/router/router.go`):
 | GET | `/api/v1/ping` | public | Example public endpoint |
 | GET | `/api/v1/me` | Bearer (Clerk) | Authenticated caller identity |
 
-Clerk tokens are verified locally against Clerk's JWKS
-(`server/internal/auth/clerk.go`), with cached keys and key rotation — no
-per-request round trip to Clerk.
+Clerk tokens are verified locally against Clerk's JWKS (`server/internal/auth/clerk.go`), with cached keys and key rotation — no per-request round trip to Clerk.
 
 Add a protected route:
 
@@ -136,24 +150,7 @@ protected := api.Group("", middleware.RequireAuth(verifier))
 protected.Get("/me", handlers.Me)
 ```
 
-## CMake (optional build orchestration)
-
-`CMakeLists.txt` wraps the Go toolchain and Bun so both layers can be built and
-run through CMake. It does not compile C/C++; it drives `go` and `bun`.
-
-```bash
-cmake -S . -B build                      # configure (locates go + bun)
-cmake --build build                      # default target "api" → server/bin/api
-
-cmake --build build --target web         # bun run build (Next.js)
-cmake --build build --target web-dev     # bun run dev
-cmake --build build --target api-run     # go run ./cmd/api
-cmake --build build --target api-test    # go test ./... -race
-cmake --build build --target api-vet     # go vet ./...
-```
-
-CMake is not bundled with the repo; install it via your package manager or
-`mise use -g cmake`.
+---
 
 ## Styling with StyleX
 
@@ -171,12 +168,30 @@ export function Row() {
 }
 ```
 
-Reuse the design tokens in `styles/tokens.stylex.ts`. Add any new source
-directory that contains StyleX styles to the `include` array in
-`postcss.config.js`.
+Reuse the design tokens in `styles/tokens.stylex.ts`. Add any new source directory that contains StyleX styles to the `include` array in `postcss.config.js`.
 
-> Tailwind is also wired up (via `@tailwindcss/postcss`) if you prefer utility
-> classes. Remove it from `postcss.config.js` and `app/globals.css` to drop it.
+> Tailwind is also wired up (via `@tailwindcss/postcss`) if you prefer utility classes. Remove it from `postcss.config.js` and `app/globals.css` to drop it.
+
+---
+
+## CMake (optional build orchestration)
+
+`CMakeLists.txt` wraps the Go toolchain and Bun so both layers can be built and run through CMake. It does not compile C/C++; it drives `go` and `bun`.
+
+```bash
+cmake -S . -B build                      # configure (locates go + bun)
+cmake --build build                      # default target "api" → server/bin/api
+
+cmake --build build --target web         # bun run build (Next.js)
+cmake --build build --target web-dev     # bun run dev
+cmake --build build --target api-run     # go run ./cmd/api
+cmake --build build --target api-test    # go test ./... -race
+cmake --build build --target api-vet     # go vet ./...
+```
+
+CMake is not bundled with the repo; install it via your package manager or `mise use -g cmake`.
+
+---
 
 ## Commands reference
 
@@ -246,3 +261,4 @@ go vet ./...
 bun run typecheck && bun run lint && bun run build   # front end
 cd server && go vet ./... && go test ./... -race     # Go API
 ```
+vvv
