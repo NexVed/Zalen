@@ -24,6 +24,8 @@ The approved Convex deployment and 120-record fictional demo seed have already b
 
 ## 1. Deploy the Go API
 
+The live Go API is [https://zalen.onrender.com](https://zalen.onrender.com). Health is [https://zalen.onrender.com/api/v1/health](https://zalen.onrender.com/api/v1/health). MCP is `https://zalen.onrender.com/mcp`.
+
 On Railway, create a service from this repository, set its **root directory to `server`**, and use its `Dockerfile`. On Render, create a Docker Web Service with the same root directory. Set the health check to `/api/v1/health`.
 
 Add these runtime variables in the host's dashboard:
@@ -60,7 +62,8 @@ Set these variables before building:
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=<your Clerk publishable key>
 CLERK_SECRET_KEY=<your Clerk secret key>
 NEXT_PUBLIC_CONVEX_URL=https://intent-seahorse-820.ap-southeast-2.convex.cloud
-NEXT_PUBLIC_MCP_URL=https://<your-api-hostname>/mcp
+NEXT_PUBLIC_API_URL=https://zalen.onrender.com/api/v1
+NEXT_PUBLIC_MCP_URL=https://zalen.onrender.com/mcp
 NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
 NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
 NEXT_PUBLIC_CLERK_SIGN_IN_FALLBACK_REDIRECT_URL=/
