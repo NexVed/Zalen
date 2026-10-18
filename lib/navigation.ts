@@ -1,5 +1,5 @@
 export const navigation = [
-  { name: "Overview", path: "/", description: "Track applications, saved opportunities, and portfolio projects." },
+  { name: "Overview", path: "/overview", description: "Track applications, saved opportunities, and portfolio projects." },
   { name: "Bounties", path: "/bounties", description: "Browse startup challenges, submission requirements, and rewards." },
   { name: "Freelancers", path: "/freelancers", description: "Find local businesses on the map. Prepare a service pitch and share your portfolio." },
   { name: "Forum", path: "/forum", description: "Ask questions, share work, and give feedback." },

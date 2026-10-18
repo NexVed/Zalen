@@ -2,6 +2,16 @@
 
 Checked on 18 October 2026.
 
+## Public landing page
+
+- `/` now presents the platform; the dashboard Overview is `/overview`.
+- Get started links to `/sign-in` for visitors and `/overview` for an existing session. Sign-in and sign-up both explicitly finish at `/overview`.
+- Profile setup remains accessible from the dashboard without automatically redirecting new users away from Overview.
+- Checked widths of 320, 390, 768, 1024, and 1440px: no horizontal document overflow or overflowing heading/paragraph text.
+- Verified rounded CSS `clip-path` shapes, section anchors, completed GSAP reveals, and the existing-session Get started handoff in Chrome.
+- Animations are scoped to the landing page, cleaned up on navigation, and disabled when reduced motion is preferred. Content is visible before animation JavaScript loads.
+- Fresh account creation was not performed during QA.
+
 ## Automated checks
 
 - Production standalone Next.js build passed.

@@ -3,7 +3,6 @@ import { Component, Suspense, createContext, useContext, useEffect, useState, ty
 import { useConvexAuth, useMutation, useQuery } from "convex/react";
 import { useUser } from "@clerk/nextjs";
 import { api } from "@/convex/_generated/api";
-import { useRouter, usePathname } from "next/navigation";
 import type { ProfileBundle } from "@/lib/profile-data";
 
 type AccountProfile = { status: "unconfigured" | "signed-out" | "loading" | "ready" | "error"; bundle: ProfileBundle | null; retry: () => void };
@@ -22,7 +21,6 @@ export function SyncUser({ children }: { children: ReactNode }) {
 function ConnectedProfileProvider({ children }: { children: ReactNode }) {
   const { isAuthenticated } = useConvexAuth();
   const { user, isLoaded } = useUser();
-  const router = useRouter(); const pathname = usePathname();
   const store = useMutation(api.users.store);
   const [attempt, setAttempt] = useState(0);
   const [failure, setFailure] = useState(false);
@@ -38,9 +36,5 @@ function ConnectedProfileProvider({ children }: { children: ReactNode }) {
     return () => clearTimeout(timer);
   }, [user, bundle, attempt]);
   const status = !isLoaded ? "loading" : !user ? "signed-out" : bundle ? "ready" : failure ? "error" : "loading";
-  useEffect(() => {
-    if (status !== "ready" || !bundle || bundle.onboarding?.completed || pathname === "/profile" || pathname.startsWith("/onboarding") || pathname.startsWith("/sign-")) return;
-    router.replace("/onboarding");
-  }, [status, bundle, pathname, router]);
   return <context.Provider value={{ status, bundle: bundle ?? null, retry: () => { setFailure(false); setAttempt(value => value + 1); } }}>{children}</context.Provider>;
 }

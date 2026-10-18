@@ -66,8 +66,8 @@ NEXT_PUBLIC_API_URL=https://zalen.onrender.com/api/v1
 NEXT_PUBLIC_MCP_URL=https://zalen.onrender.com/mcp
 NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
 NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
-NEXT_PUBLIC_CLERK_SIGN_IN_FALLBACK_REDIRECT_URL=/
-NEXT_PUBLIC_CLERK_SIGN_UP_FALLBACK_REDIRECT_URL=/onboarding
+NEXT_PUBLIC_CLERK_SIGN_IN_FALLBACK_REDIRECT_URL=/overview
+NEXT_PUBLIC_CLERK_SIGN_UP_FALLBACK_REDIRECT_URL=/overview
 GEOAPIFY_API_KEY=<your Geoapify key>
 ```
 
@@ -123,7 +123,8 @@ Stop the containers with `docker compose down`. Application data stays in Convex
 
 ## 5. Presentation checks
 
-- Overview displays the Zalen banner and project shortcuts.
+- The public homepage is `/`. Get started opens `/sign-in`, with registration available on `/sign-up`. Both auth forms continue to `/overview`; profile setup is optional from the dashboard.
+- Overview at `/overview` displays the Zalen banner and project shortcuts.
 - Bounties and gigs show fictional demo listings, with additional statuses available through filters.
 - Forum and community show demo posts and comments.
 - Investor/business directories read their seeded examples from Convex.

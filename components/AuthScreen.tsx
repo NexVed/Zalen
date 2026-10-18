@@ -62,8 +62,8 @@ export function AuthScreen({ mode }: { mode: "sign-up" | "sign-in" }) {
           <ClerkLoading><div className={styles.setupNotice} role="status">Loading your secure {signingUp ? "sign-up" : "sign-in"} form…</div></ClerkLoading>
           <ClerkFailed><div className={styles.setupNotice} role="alert">The sign-in service couldn’t load. Check your connection and try again.<button type="button" onClick={() => window.location.reload()}>Retry</button></div></ClerkFailed>
           <ClerkLoaded>{signingUp
-          ? <SignUp routing="path" path="/sign-up" signInUrl="/sign-in" fallbackRedirectUrl="/onboarding" appearance={appearance} />
-          : <SignIn routing="path" path="/sign-in" signUpUrl="/sign-up" fallbackRedirectUrl="/" appearance={appearance} />}</ClerkLoaded></>
+          ? <SignUp routing="path" path="/sign-up" signInUrl="/sign-in" forceRedirectUrl="/overview" appearance={appearance} />
+          : <SignIn routing="path" path="/sign-in" signUpUrl="/sign-up" forceRedirectUrl="/overview" appearance={appearance} />}</ClerkLoaded></>
           : <div className={styles.setupNotice} role="status">Account registration is being connected. Please check back soon.<Link href="/">Explore Zalen <ArrowUpRight size={14} /></Link></div>}
         <p className={styles.switchAccount}>{signingUp ? "Already part of the community?" : "New to Zalen?"} <Link href={signingUp ? "/sign-in" : "/sign-up"}>{signingUp ? "Sign in" : "Create an account"} <ArrowUpRight size={12} /></Link></p>
       </div>
